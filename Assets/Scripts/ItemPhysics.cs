@@ -1,7 +1,7 @@
 using UnityEngine;
 
 //
-// ItemPhysics to simulation stacked items on top of vehicle
+// ItemPhysics to simulate stacked items on top of vehicle
 //
 public class ItemPhysics : MonoBehaviour
 {
@@ -9,18 +9,22 @@ public class ItemPhysics : MonoBehaviour
     public float stability = 100f;
 
     [Header("Tuning")]
-    [Range(0f, 20f)]
+    [Range(0f, 100f)]
     public float lateralGMultiplier = 50f;
     [Range(0f, 10f)]
     public float recoveryRate = 2f;
 
     [Header("Visual Stack")]
     public Transform itemStack;
-    [Range(0f, 30f)]
-    public float maxTiltAngle = 15f;
+    [Range(0f, 100f)]
+    public float maxTiltAngle = 90f;
 
+    [Header("Falling Items settings")]
+    public System.Collections.Generic.List<GameObject> itemBoxes;
+    public float fallForce = 5f;
     // assuming car has rigidbody component
     private Rigidbody carRigidbody;
+    private bool itemsFallen = false;
 
     void Start()
     {
@@ -39,6 +43,7 @@ public class ItemPhysics : MonoBehaviour
     void FixedUpdate()
     {
         if (carRigidbody == null) return;
+        if (itemsFallen) return;
 
         float lateralG = CalculateLateralGForce();
 
@@ -66,7 +71,13 @@ public class ItemPhysics : MonoBehaviour
     {
         Vector3 localVelocity = transform.InverseTransformDirection(carRigidbody.linearVelocity);
         float lateralSpeed = Mathf.Abs(localVelocity.x);
-        float lateralG = lateralSpeed / 10f;
+
+        // if (Input.GetKey(KeyCode.Space))
+        // {
+        //     Debug.Log($"Raw Lateral Speed: {lateralSpeed:F2} | After /10: {lateralSpeed / 10f:F2}");
+        // }
+
+        float lateralG = lateralSpeed;
         return lateralG;
     }
 
@@ -100,6 +111,11 @@ public class ItemPhysics : MonoBehaviour
         {
             Debug.LogError("CARGO FELL OFF!");
         }
+
+        if (stability <= 0f && !itemsFallen)
+        {
+            MakeItemsFall();
+        }
     }
 
     //
@@ -113,11 +129,11 @@ public class ItemPhysics : MonoBehaviour
     void UpdateStackVisual(float lateralG)
     {
         Vector3 localVel = transform.InverseTransformDirection(carRigidbody.linearVelocity);
-        float targetTilt = -localVel.x * 2f;
+        float targetTiltZ = -localVel.x * 10f;
 
-        targetTilt = Mathf.Clamp(targetTilt, -maxTiltAngle, maxTiltAngle);
+        targetTiltZ = Mathf.Clamp(targetTiltZ, -maxTiltAngle, maxTiltAngle);
 
-        Quaternion targetRotation = Quaternion.Euler(0, 0, targetTilt);
+        Quaternion targetRotation = Quaternion.Euler(0, 0, targetTiltZ);
         itemStack.localRotation = Quaternion.Slerp(
             itemStack.localRotation,
             targetRotation,
@@ -127,8 +143,33 @@ public class ItemPhysics : MonoBehaviour
         if (stability < 25f)
         {
             float wobbleAmount = (25f - stability) / 25f;
-            float wobble = Mathf.Sin(Time.time * 10f) * wobbleAmount * 5f;
+            float wobble = Mathf.Sin(Time.time * 12f) * wobbleAmount * 10f;
             itemStack.localRotation *= Quaternion.Euler(0, 0, wobble);
+        }
+    }
+
+    void MakeItemsFall()
+    {
+        itemsFallen = true;
+        Debug.LogError("Falling items now");
+
+        foreach (GameObject box in itemBoxes)
+        {
+            if (box == null) continue;
+
+            box.transform.SetParent(null);
+
+            Rigidbody boxRB = box.AddComponent<Rigidbody>();
+
+            Vector3 randomForce = new Vector3(
+                Random.Range(-1, 1f),
+                Random.Range(0.5f, 1f),
+                Random.Range(-1f, 1f)
+            ) * fallForce;
+
+            boxRB.AddForce(randomForce, ForceMode.Impulse);
+
+            boxRB.AddTorque(Random.insideUnitSphere * fallForce, ForceMode.Impulse);
         }
     }
 }

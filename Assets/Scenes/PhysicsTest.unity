@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemPhysics
   stability: 100
   lateralGMultiplier: 10
-  recoveryRate: 20
+  recoveryRate: 40
   angularVelocityMultiplier: 2
   smoothDrivingThreshold: 2
   itemStack: {fileID: 160714841}

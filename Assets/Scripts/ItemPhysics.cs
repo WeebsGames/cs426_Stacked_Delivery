@@ -12,7 +12,7 @@ public class ItemPhysics : MonoBehaviour
     [Range(0f, 100f)]
     public float lateralGMultiplier = 10f;
     [Range(0f, 100f)]
-    public float recoveryRate = 20f;
+    public float recoveryRate = 40f;
 
     [Range(0f, 50f)]
     public float angularVelocityMultiplier = 2f;

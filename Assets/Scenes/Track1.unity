@@ -2801,8 +2801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarMovement
   steeringRadius: 5
-  acceleration: 0.1
-  maxSpeed: 50
+  acceleration: 1
+  maxSpeed: 99
 --- !u!54 &1421153744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3745,7 +3745,7 @@ MonoBehaviour:
   - {x: 41.994408, y: 2.8478994, z: 59.108376}
   - {x: 35.985718, y: 2.8478994, z: 37.38501}
   - {x: 31.971716, y: 2.8478994, z: 22.873089}
-  - {x: 19.67895, y: 0.2000122, z: 0.21227874}
+  - {x: 19.678976, y: 0.2000122, z: 0.21227874}
   - {x: 6.8136597, y: 0.2000122, z: 0.21228027}
   normals:
   - {x: 0.0046429797, y: 0.9949612, z: 0.100153156}
@@ -4982,15 +4982,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1770570648802965425, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 639.21234
+      value: 592.9
       objectReference: {fileID: 0}
     - target: {fileID: 1770570648802965425, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.87
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: 1770570648802965425, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 239.099
+      value: 278.7
       objectReference: {fileID: 0}
     - target: {fileID: 1770570648802965425, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5018,6 +5018,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1770570648802965425, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547330836527251632, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547330836527251632, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547330836527251632, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4537900895690674978, guid: 6924f46b9bfec6e4d98bc44bec723ccb, type: 3}

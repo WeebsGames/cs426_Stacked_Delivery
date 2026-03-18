@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,12 +27,13 @@ public class CarMovement : MonoBehaviour
     void Update()
     {
         //forward acceleration input
+        float speed = rb.linearVelocity.magnitude;
+
         if(Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
-        {
-            vel += acceleration;
-            if(vel > maxSpeed)
+        { 
+            if(speed < maxSpeed)
             {
-                vel = maxSpeed;
+                vel += acceleration * 1-(speed/maxSpeed);
             }
         } else
         {
@@ -45,7 +48,10 @@ public class CarMovement : MonoBehaviour
         {
             if(vel > 0)
             {
-                vel -= acceleration;
+                vel -= acceleration * 5;
+            } else
+            {
+                vel = 0;
             }
         }
 
@@ -61,17 +67,19 @@ public class CarMovement : MonoBehaviour
         }
 
         //linear velocity formula
-        float ke = 0.5f * rb.mass * (vel * vel);
-
+        // float ke = 0.5f * rb.mass * (vel * vel); //--velocity kept increasing exponentially
+        float ke = math.sqrt(vel*20);
+        // float ke = vel;
         //rotate car
         t.Rotate(0,steeringRadius*turn,0,Space.Self);
 
         dir = t.forward * ke;
 
-        rb.linearVelocity = dir;
-        print("direction vector: " + dir);
+        rb.linearVelocity = dir * Time.deltaTime * 50;
+        print("time since last frame: " + Time.deltaTime);
         print("kinetic energy: " + ke);
         print("vel: " + vel);
+        print("speed: " + Math.Round(rb.linearVelocity.magnitude));
 
 
     }

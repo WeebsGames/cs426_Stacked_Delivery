@@ -10,9 +10,12 @@ public class ItemPhysics : MonoBehaviour
 
     [Header("Tuning")]
     [Range(0f, 100f)]
-    public float lateralGMultiplier = 25f;
+    public float lateralGMultiplier = 10f;
     [Range(0f, 100f)]
     public float recoveryRate = 20f;
+
+    [Range(0f, 50f)]
+    public float angularVelocityMultiplier = 2f;
     public float smoothDrivingThreshold = 2f;
 
     [Header("Visual Stack")]
@@ -65,6 +68,8 @@ public class ItemPhysics : MonoBehaviour
         if (Time.frameCount % 30 == 0)
         {
             Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2}");
+            float rotationSpeed = carRigidbody.angularVelocity.magnitude;
+            Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2} | Rotation: {rotationSpeed:F2}");
         }
     }
 
@@ -90,11 +95,12 @@ public class ItemPhysics : MonoBehaviour
     //
     void UpdateStability(float lateralG)
     {
-        float stabilityLoss = lateralG * lateralGMultiplier;
+        float rotationSpeed = carRigidbody.angularVelocity.magnitude;
+        float stabilityLoss = (lateralG * lateralGMultiplier) + (rotationSpeed * angularVelocityMultiplier);
 
         stability -= stabilityLoss * Time.fixedDeltaTime;
 
-        if (lateralG < smoothDrivingThreshold)
+        if (lateralG < smoothDrivingThreshold && rotationSpeed < 1.5f)
         {
             stability += recoveryRate * Time.fixedDeltaTime;
         }

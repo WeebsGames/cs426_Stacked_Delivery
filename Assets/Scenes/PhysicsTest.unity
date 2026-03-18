@@ -1012,8 +1012,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPhysics
   stability: 100
-  lateralGMultiplier: 25
-  recoveryRate: 40
+  lateralGMultiplier: 10
+  recoveryRate: 20
+  angularVelocityMultiplier: 2
   smoothDrivingThreshold: 2
   itemStack: {fileID: 160714841}
   maxTiltAngle: 70

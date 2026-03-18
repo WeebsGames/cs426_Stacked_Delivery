@@ -10,18 +10,25 @@ public class ItemPhysics : MonoBehaviour
 
     [Header("Tuning")]
     [Range(0f, 100f)]
-    public float lateralGMultiplier = 50f;
-    [Range(0f, 10f)]
-    public float recoveryRate = 2f;
+    public float lateralGMultiplier = 25f;
+    [Range(0f, 100f)]
+    public float recoveryRate = 20f;
+    public float smoothDrivingThreshold = 2f;
 
     [Header("Visual Stack")]
     public Transform itemStack;
     [Range(0f, 100f)]
-    public float maxTiltAngle = 90f;
+    public float maxTiltAngle = 50f;
 
     [Header("Falling Items settings")]
     public System.Collections.Generic.List<GameObject> itemBoxes;
     public float fallForce = 5f;
+
+    [Header("Collision settings")]
+    [Range(0f, 50f)]
+    public float impactMultiplier = 5f;
+    public float impactThreshold = 8f;
+
     // assuming car has rigidbody component
     private Rigidbody carRigidbody;
     private bool itemsFallen = false;
@@ -70,14 +77,7 @@ public class ItemPhysics : MonoBehaviour
     float CalculateLateralGForce()
     {
         Vector3 localVelocity = transform.InverseTransformDirection(carRigidbody.linearVelocity);
-        float lateralSpeed = Mathf.Abs(localVelocity.x);
-
-        // if (Input.GetKey(KeyCode.Space))
-        // {
-        //     Debug.Log($"Raw Lateral Speed: {lateralSpeed:F2} | After /10: {lateralSpeed / 10f:F2}");
-        // }
-
-        float lateralG = lateralSpeed;
+        float lateralG = Mathf.Abs(localVelocity.x);
         return lateralG;
     }
 
@@ -94,7 +94,7 @@ public class ItemPhysics : MonoBehaviour
 
         stability -= stabilityLoss * Time.fixedDeltaTime;
 
-        if (lateralG < 0.3f)
+        if (lateralG < smoothDrivingThreshold)
         {
             stability += recoveryRate * Time.fixedDeltaTime;
         }
@@ -148,6 +148,15 @@ public class ItemPhysics : MonoBehaviour
         }
     }
 
+    //
+    // MakeItemsFall()
+    //
+    // This method handles when the stability value reaches 0 and the
+    // items haven't fallen, then it will apply a random force to
+    // all the items in the stack, to simulate the items flying out
+    // the stack due to reckless driving or collision
+    //
+    //
     void MakeItemsFall()
     {
         itemsFallen = true;
@@ -170,6 +179,32 @@ public class ItemPhysics : MonoBehaviour
             boxRB.AddForce(randomForce, ForceMode.Impulse);
 
             boxRB.AddTorque(Random.insideUnitSphere * fallForce, ForceMode.Impulse);
+        }
+    }
+
+    //
+    // OnCollisionEnter()
+    //
+    // This method detects collisions with walls/barriers and damages
+    // stability. Harder impact -> more stability loss
+    //
+    void OnCollisionEnter(Collision collision)
+    {
+        if (itemsFallen) return;
+
+        if (collision.gameObject.name == "Floor")
+        {
+            return;
+        }
+
+        float impactForce = collision.impulse.magnitude;
+
+        if (impactForce > impactThreshold)
+        {
+            float damage = impactForce * impactMultiplier;
+            stability -= damage;
+            stability = Mathf.Clamp(stability, 0f, 100f);
+            Debug.Log($"Collision, Impact force: {impactForce:F1} | Damage: {damage:F1} | Stability: {stability:F1}%");
         }
     }
 }

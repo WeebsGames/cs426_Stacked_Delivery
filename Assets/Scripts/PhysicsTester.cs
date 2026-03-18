@@ -7,7 +7,7 @@ using UnityEngine;
 public class PhysicsTester : MonoBehaviour
 {
     private Rigidbody rb;
-    public float forceAmount = 10f;
+    public float forceAmount = 2f;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class PhysicsTester : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(transform.right * forceAmount * 5f);
+            rb.AddForce(transform.right * forceAmount);
         }
 
         if (Input.GetKey(KeyCode.W))

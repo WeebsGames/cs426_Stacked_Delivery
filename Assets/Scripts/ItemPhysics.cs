@@ -135,7 +135,7 @@ public class ItemPhysics : MonoBehaviour
     void UpdateStackVisual(float lateralG)
     {
         Vector3 localVel = transform.InverseTransformDirection(carRigidbody.linearVelocity);
-        float targetTiltZ = -localVel.x * 10f;
+        float targetTiltZ = -localVel.x * 7f;
 
         targetTiltZ = Mathf.Clamp(targetTiltZ, -maxTiltAngle, maxTiltAngle);
 

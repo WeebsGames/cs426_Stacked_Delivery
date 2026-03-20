@@ -1,5 +1,6 @@
 using System;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,7 @@ public class CarMovement : MonoBehaviour
     float speed;
     int turn;
     float vel;
+    bool grounded = true;
     Rigidbody rb;
     Transform t;
     Vector3 dir = new Vector3(0,0,0);
@@ -75,12 +77,32 @@ public class CarMovement : MonoBehaviour
 
         dir = t.forward * ke;
 
-        rb.linearVelocity = dir * Time.deltaTime * 50;
+        if (grounded)
+        {
+            rb.linearVelocity += dir * Time.deltaTime * 50;
+        }        
         print("time since last frame: " + Time.deltaTime);
         print("kinetic energy: " + ke);
         print("vel: " + vel);
         print("speed: " + Math.Round(rb.linearVelocity.magnitude));
 
 
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Debug.Log("collision detected with tag: " + collision.transform.tag);
+        if(collision.transform.tag == "ground")
+        {
+            grounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if(collision.transform.tag == "ground")
+        {
+            grounded = false;   
+        }
     }
 }

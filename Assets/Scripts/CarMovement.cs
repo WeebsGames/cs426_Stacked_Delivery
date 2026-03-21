@@ -76,10 +76,10 @@ public class CarMovement : MonoBehaviour
         dir = t.forward * ke;
 
         rb.linearVelocity = dir * Time.deltaTime * 50;
-        print("time since last frame: " + Time.deltaTime);
-        print("kinetic energy: " + ke);
-        print("vel: " + vel);
-        print("speed: " + Math.Round(rb.linearVelocity.magnitude));
+        // print("time since last frame: " + Time.deltaTime);
+        // print("kinetic energy: " + ke);
+        // print("vel: " + vel);
+        // print("speed: " + Math.Round(rb.linearVelocity.magnitude));
 
 
     }

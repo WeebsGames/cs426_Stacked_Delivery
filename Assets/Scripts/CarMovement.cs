@@ -79,7 +79,7 @@ public class CarMovement : MonoBehaviour
 
         //linear velocity formula
         // float ke = 0.5f * rb.mass * (vel * vel); //--velocity kept increasing exponentially
-        float ke = math.sqrt(vel*2);
+        float ke = math.sqrt(math.abs(vel*2));
         // float ke = vel;
         //rotate car
         t.Rotate(0,steeringRadius*turn,0,Space.Self);

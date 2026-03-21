@@ -6,7 +6,7 @@ public class LevelSelectMenu : MonoBehaviour
     public void LoadLevel1()
     {
         Debug.Log("Level 1 clicked");
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("Track1");
     }
 
     public void LoadLevel2()

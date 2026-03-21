@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour {
 	public float followSpeed = 2;
 	[Range(1, 10)]
 	public float lookSpeed = 5;
+	public Vector3 offset = new Vector3(0f, 5f, -8f);
 	Vector3 initialCameraPosition;
 	Vector3 initialCarPosition;
 	Vector3 absoluteInitCameraPosition;
@@ -27,8 +28,10 @@ public class CameraFollow : MonoBehaviour {
 		transform.rotation = Quaternion.Lerp(transform.rotation, _rot, lookSpeed * Time.deltaTime);
 
 		//Move to car
-		Vector3 _targetPos = absoluteInitCameraPosition + carTransform.transform.position;
-		transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
+		// Vector3 _targetPos = absoluteInitCameraPosition + carTransform.transform.position;
+		// transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
+		Vector3 desiredPosition = carTransform.position + carTransform.TransformDirection(offset);
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, lookSpeed * Time.deltaTime);
 
 	}
 

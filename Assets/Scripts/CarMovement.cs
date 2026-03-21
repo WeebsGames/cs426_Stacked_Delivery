@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,7 +14,9 @@ public class CarMovement : MonoBehaviour
 
     float speed;
     int turn;
+    int collisions;
     float vel;
+    bool grounded = true;
     Rigidbody rb;
     Transform t;
     Vector3 dir = new Vector3(0,0,0);
@@ -27,7 +31,7 @@ public class CarMovement : MonoBehaviour
     void Update()
     {
         //forward acceleration input
-        float speed = rb.linearVelocity.magnitude;
+        float speed = rb.linearVelocity.magnitude * 2;
 
         if(Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
         { 
@@ -39,7 +43,7 @@ public class CarMovement : MonoBehaviour
         {
             if(vel > 0)
             {
-                vel -= acceleration;
+                vel -= acceleration * 5;
             }
         }
 
@@ -48,7 +52,7 @@ public class CarMovement : MonoBehaviour
         {
             if(vel > 0)
             {
-                vel -= acceleration * 5;
+                vel -= acceleration * 20;
             } else
             {
                 vel = 0;
@@ -66,21 +70,48 @@ public class CarMovement : MonoBehaviour
             turn = 0;
         }
 
+        //flip car
+        if (Keyboard.current.fKey.wasReleasedThisFrame && collisions > 0)
+        {
+            t.position += new Vector3(0,10,0);
+            t.eulerAngles = new Vector3(0,0,0);
+        }
+
         //linear velocity formula
         // float ke = 0.5f * rb.mass * (vel * vel); //--velocity kept increasing exponentially
-        float ke = math.sqrt(vel*20);
+        float ke = math.sqrt(vel*2);
         // float ke = vel;
         //rotate car
         t.Rotate(0,steeringRadius*turn,0,Space.Self);
 
         dir = t.forward * ke;
 
-        rb.linearVelocity = dir * Time.deltaTime * 50;
+        if (collisions > 0)
+        {
+            rb.linearVelocity += dir * Time.deltaTime;
+        }        
         // print("time since last frame: " + Time.deltaTime);
         // print("kinetic energy: " + ke);
         // print("vel: " + vel);
         // print("speed: " + Math.Round(rb.linearVelocity.magnitude));
 
 
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Debug.Log("collision detected with tag: " + collision.transform.tag);
+        if(collision.transform.tag == "ground")
+        {
+            collisions++;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if(collision.transform.tag == "ground")
+        {
+            collisions--;
+        }
     }
 }

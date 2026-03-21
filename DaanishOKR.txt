@@ -1,2 +1,2 @@
-- Create Main Menu
-- Create Car Model
+- Create Main Menu (By Fri, est 4 hrs)
+- Create Car Model (By Fri, est 4 hrs)

@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ece4c9dd1d040b6a990fa31ed7f6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarController
-  moveSpeed: 10
+  moveSpeed: 100
   turnSpeed: 100
 --- !u!65 &1107376787
 BoxCollider:

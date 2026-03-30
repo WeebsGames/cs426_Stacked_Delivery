@@ -192,7 +192,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18946720}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: baae52c60651f044888e54b6232ea9cc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1777,7 +1777,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495990351}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: baae52c60651f044888e54b6232ea9cc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3866,7 +3866,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082135686}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: baae52c60651f044888e54b6232ea9cc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4656,7 +4656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarMovement
   steeringRadius: 0.25
   acceleration: 1
-  maxSpeed: 99
+  maxSpeed: 30
 --- !u!54 &1421153744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5313,7 +5313,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610215665}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: baae52c60651f044888e54b6232ea9cc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5505,7 +5505,7 @@ MonoBehaviour:
   - {x: 41.994408, y: 2.8478994, z: 59.108376}
   - {x: 35.985718, y: 2.8478994, z: 37.38501}
   - {x: 31.971716, y: 2.8478994, z: 22.873089}
-  - {x: 19.679356, y: 0.2000122, z: 0.21227874}
+  - {x: 19.679373, y: 0.2000122, z: 0.21227874}
   - {x: 6.8136597, y: 0.2000122, z: 0.21228027}
   normals:
   - {x: 0.0046429797, y: 0.9949612, z: 0.100153156}

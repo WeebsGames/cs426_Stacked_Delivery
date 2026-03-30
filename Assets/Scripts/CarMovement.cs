@@ -89,7 +89,7 @@ public class CarMovement : MonoBehaviour
         {
             rb.linearVelocity += dir * Time.deltaTime;
         } 
-        rb.linearVelocity = transform.forward * rb.linearVelocity.magnitude;
+        Vector3.Project(transform.forward * rb.linearVelocity.magnitude, rb.linearVelocity);
         // print("time since last frame: " + Time.deltaTime);
         // print("kinetic energy: " + ke);
         // print("vel: " + vel);

@@ -80,7 +80,7 @@ public class CarMovement : MonoBehaviour
        float ke = math.sqrt(2*math.abs(vel*4));
 
         //rotate car
-        t.Rotate(0,steeringRadius*turn,0,Space.Self);
+        t.Rotate(0,steeringRadius*turn*Time.deltaTime,0,Space.Self);
         // print(t.right * turn);
 
         dir = t.forward * ke;

@@ -541,9 +541,65 @@ PrefabInstance:
       propertyPath: m_Name
       value: AE86
       objectReference: {fileID: 0}
+    - target: {fileID: 828258023802894241, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 828258023802894241, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_AsymptoteSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 828258023802894241, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_AsymptoteValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769051810592708227, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769051810592708227, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_AsymptoteSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769051810592708227, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_AsymptoteValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522128790726012301, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522128790726012301, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_AsymptoteSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522128790726012301, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_AsymptoteValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923688919728418382, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923688919728418382, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_AsymptoteSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923688919728418382, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_ForwardFriction.m_AsymptoteValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7353640015364892550, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: motorTorque
       value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353640015364892550, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: steeringRange
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353640015364892550, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: steeringRangeAtMaxSpeed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9218217658314702147, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5964,7 +6020,7 @@ MonoBehaviour:
   - {x: 41.994408, y: 2.8478994, z: 59.108376}
   - {x: 35.985718, y: 2.8478994, z: 37.38501}
   - {x: 31.971716, y: 2.8478994, z: 22.873089}
-  - {x: 19.679403, y: 0.2000122, z: 0.21227874}
+  - {x: 19.679417, y: 0.2000122, z: 0.21227874}
   - {x: 6.8136597, y: 0.2000122, z: 0.21228027}
   normals:
   - {x: 0.0046429797, y: 0.9949612, z: 0.100153156}

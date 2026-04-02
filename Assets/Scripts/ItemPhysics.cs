@@ -77,13 +77,22 @@ public class ItemPhysics : MonoBehaviour
     // calculateLateralGForce()
     //
     // This method calculates sideways forces from drifting/turning
-    // Goal: Sideways movement -> items slide off
+    // Goal: Sideways movement -> items fall off
+    // Calculate force by using flat plane by using sideways
+    // axis of car, removing the tilt from hills/slopes
+    // Dot gives +/- or 0, and get abs value of lateral force for both
+    // sides
     //
     float CalculateLateralGForce()
     {
-        Vector3 localVelocity = transform.InverseTransformDirection(carRigidbody.linearVelocity);
-        float lateralG = Mathf.Abs(localVelocity.x);
-        return lateralG;
+        Vector3 worldVel = carRigidbody.linearVelocity;
+        Vector3 carRight = transform.right;
+        carRight.y = 0;
+        carRight.Normalize();
+
+        float lateralG = Vector3.Dot(worldVel, carRight);
+
+        return Mathf.Abs(lateralG);
     }
 
     //
@@ -134,9 +143,20 @@ public class ItemPhysics : MonoBehaviour
     //
     void UpdateStackVisual(float lateralG)
     {
-        Vector3 localVel = transform.InverseTransformDirection(carRigidbody.linearVelocity);
-        float targetTiltZ = -localVel.x * 7f;
+        // Get velocity and get car's sideways axis flat to ground
+        // and measure sideways velocity on flat plane when going up
+        // slope/hill
+        Vector3 worldVel = carRigidbody.linearVelocity;
+        Vector3 carRight = transform.right;
+        carRight.y = 0;
+        carRight.Normalize();
 
+        float lateralVel = Vector3.Dot(worldVel, carRight);
+        // negative to tilt stack opposite direction of movement
+        // 7f just for visual effect of tilt applied
+        float targetTiltZ = -lateralVel * 7f;
+
+        // stop tilt from tilting crazy
         targetTiltZ = Mathf.Clamp(targetTiltZ, -maxTiltAngle, maxTiltAngle);
 
         Quaternion targetRotation = Quaternion.Euler(0, 0, targetTiltZ);
@@ -146,6 +166,7 @@ public class ItemPhysics : MonoBehaviour
             Time.fixedDeltaTime * 5f
         );
 
+        // wobble when unstable
         if (stability < 25f)
         {
             float wobbleAmount = (25f - stability) / 25f;
@@ -198,7 +219,9 @@ public class ItemPhysics : MonoBehaviour
     {
         if (itemsFallen) return;
 
-        if (collision.gameObject.name == "Floor")
+        // ignore everything with the ground tag, all of the Road
+        // System child objects essentially
+        if (collision.gameObject.CompareTag("ground"))
         {
             return;
         }
@@ -210,7 +233,7 @@ public class ItemPhysics : MonoBehaviour
             float damage = impactForce * impactMultiplier;
             stability -= damage;
             stability = Mathf.Clamp(stability, 0f, 100f);
-            Debug.Log($"Collision, Impact force: {impactForce:F1} | Damage: {damage:F1} | Stability: {stability:F1}%");
+            // Debug.Log($"Collision with {collision.gameObject.name} | Impact: {impactForce:F1} | Damage: {damage:F1} | Stability: {stability:F1}%");
         }
     }
 

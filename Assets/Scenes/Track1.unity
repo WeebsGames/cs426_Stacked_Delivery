@@ -541,6 +541,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AE86
       objectReference: {fileID: 0}
+    - target: {fileID: 565558330702852804, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 565558330702852804, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 771ce407ce807b74885ec23ebd1e6647, type: 3}
+    - target: {fileID: 565558330702852804, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 828258023802894241, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_ForwardFriction.m_ExtremumSlip
       value: 1
@@ -563,6 +575,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2769051810592708227, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_ForwardFriction.m_AsymptoteValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906875904654496698, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: idle
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a540ed299a354b449f1558520f3fbee, type: 3}
+    - target: {fileID: 2906875904654496698, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 539389013}
+    - target: {fileID: 2906875904654496698, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: running
+      value: 
+      objectReference: {fileID: 8300000, guid: 771ce407ce807b74885ec23ebd1e6647, type: 3}
+    - target: {fileID: 2906875904654496698, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5522128790726012301, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
@@ -589,6 +617,10 @@ PrefabInstance:
       propertyPath: m_ForwardFriction.m_AsymptoteValue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7353640015364892550, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: startPos
+      value: 
+      objectReference: {fileID: 2030300293}
     - target: {fileID: 7353640015364892550, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: motorTorque
       value: 4000
@@ -2359,6 +2391,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495990351}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &539389013 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 565558330702852804, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+  m_PrefabInstance: {fileID: 156241900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &550951252
 GameObject:
   m_ObjectHideFlags: 0
@@ -6020,7 +6057,7 @@ MonoBehaviour:
   - {x: 41.994408, y: 2.8478994, z: 59.108376}
   - {x: 35.985718, y: 2.8478994, z: 37.38501}
   - {x: 31.971716, y: 2.8478994, z: 22.873089}
-  - {x: 19.679432, y: 0.2000122, z: 0.21227874}
+  - {x: 19.679565, y: 0.2000122, z: 0.21227874}
   - {x: 6.8136597, y: 0.2000122, z: 0.21228027}
   normals:
   - {x: 0.0046429797, y: 0.9949612, z: 0.100153156}

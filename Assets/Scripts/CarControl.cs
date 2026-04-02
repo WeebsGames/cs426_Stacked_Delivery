@@ -16,12 +16,15 @@ public class CarControl : MonoBehaviour
 
     private WheelControl[] wheels;
     private Rigidbody rigidBody;
+    private WheelFrictionCurve sideFric;
+    private bool handbraking = false;
     
     [Header("Input Actions")]
     public InputActionReference moveAction;
 
     [Header("OtherObjects")]
-    public TMP_Text speedText;
+    // public TMP_Text speedText;
+    public TMP_Text brakeText;
     public GameObject startPos;
 
     private void OnEnable()
@@ -47,7 +50,7 @@ public class CarControl : MonoBehaviour
         // Get all wheel components attached to the car
         wheels = GetComponentsInChildren<WheelControl>();
 
-        speedText.text = "Speed: " + rigidBody.transform.forward.magnitude;
+        // speedText.text = "Speed: " + rigidBody.transform.forward.magnitude;
     }
 
     void Update()
@@ -58,6 +61,29 @@ public class CarControl : MonoBehaviour
             rigidBody.transform.rotation = startPos.transform.rotation;
             rigidBody.linearVelocity = new Vector3(0,0,0);
             Debug.Log("reset car pos");
+        }
+
+        //reduce friction of wheels to simulate handbraking
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            handbraking = !handbraking;
+            brakeText.text = "Handbrake: " + handbraking;
+            print("Handbraking: " + handbraking);
+            foreach(var wheel in wheels)
+            {
+                if (wheel.motorized)
+                {
+                    sideFric = wheel.WheelCollider.sidewaysFriction;
+                    if (handbraking)
+                    {
+                        sideFric.stiffness = 0f;
+                    } else
+                    {
+                        sideFric.stiffness = 1f;
+                    }
+                    wheel.WheelCollider.sidewaysFriction = sideFric;
+                }
+            }
         }
     }
 
@@ -108,6 +134,6 @@ public class CarControl : MonoBehaviour
             }
         }
 
-        speedText.text = "Speed: " + rigidBody.linearVelocity.magnitude;
+        // speedText.text = "Speed: " + rigidBody.linearVelocity.magnitude;
     }
 }

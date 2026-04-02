@@ -219,19 +219,8 @@ public class ItemPhysics : MonoBehaviour
     //
     // Returns current stability as a value from 0 to 1.
     // 0 = completely unstable, 1 = perfectly stable.
-    // Based on tilt angle compared to max allowed tilt.
-    //
     public float GetStability()
     {
-        if (itemStack == null) return 1f;
-
-        float currentTilt = Mathf.Abs(itemStack.localRotation.eulerAngles.z);
-
-        if (currentTilt > 180f)
-            currentTilt = 360f - currentTilt;
-
-        float stability = 1f - Mathf.Clamp01(currentTilt / maxTiltAngle);
-
-        return stability;
+        return stability / 100f;
     }
 }

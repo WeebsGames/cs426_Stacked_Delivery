@@ -3955,19 +3955,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPhysics
   stability: 100
-  lateralGMultiplier: 0
-  recoveryRate: 30
+  lateralGMultiplier: 5
+  recoveryRate: 15
   angularVelocityMultiplier: 2
-  smoothDrivingThreshold: 2
+  smoothDrivingThreshold: 1
   itemStack: {fileID: 1535557341}
-  maxTiltAngle: 50
+  maxTiltAngle: 15
   itemBoxes:
   - {fileID: 714298388}
   - {fileID: 1470129234}
   - {fileID: 1420034198}
   fallForce: 5
-  impactMultiplier: 0.5
-  impactThreshold: 80
+  impactMultiplier: 3
+  impactThreshold: 30
 --- !u!1 &985856908
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,7 +5265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b785f37d5f05e2498d9fdc18d5718fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StabilityMeterUI
-  itemPhysics: {fileID: 1421153748}
+  itemPhysics: {fileID: 962823298}
   fillImage: {fileID: 355904536}
   stableColor: {r: 0, g: 1, b: 0, a: 1}
   unstableColor: {r: 1, g: 0, b: 0, a: 1}
@@ -5964,7 +5964,7 @@ MonoBehaviour:
   - {x: 41.994408, y: 2.8478994, z: 59.108376}
   - {x: 35.985718, y: 2.8478994, z: 37.38501}
   - {x: 31.971716, y: 2.8478994, z: 22.873089}
-  - {x: 19.679403, y: 0.2000122, z: 0.21227874}
+  - {x: 19.67942, y: 0.2000122, z: 0.21227874}
   - {x: 6.8136597, y: 0.2000122, z: 0.21228027}
   normals:
   - {x: 0.0046429797, y: 0.9949612, z: 0.100153156}

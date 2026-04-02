@@ -6020,7 +6020,7 @@ MonoBehaviour:
   - {x: 41.994408, y: 2.8478994, z: 59.108376}
   - {x: 35.985718, y: 2.8478994, z: 37.38501}
   - {x: 31.971716, y: 2.8478994, z: 22.873089}
-  - {x: 19.679417, y: 0.2000122, z: 0.21227874}
+  - {x: 19.679432, y: 0.2000122, z: 0.21227874}
   - {x: 6.8136597, y: 0.2000122, z: 0.21228027}
   normals:
   - {x: 0.0046429797, y: 0.9949612, z: 0.100153156}
@@ -7198,7 +7198,7 @@ Transform:
   m_GameObject: {fileID: 2030300293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 574.2932, y: 13.870083, z: 306.986}
+  m_LocalPosition: {x: 574.2932, y: 14.16, z: 306.986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

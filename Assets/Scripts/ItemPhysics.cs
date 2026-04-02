@@ -67,9 +67,9 @@ public class ItemPhysics : MonoBehaviour
         // This is just to showcase a stability tracker on the console
         if (Time.frameCount % 30 == 0)
         {
-            Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2}");
+            // Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2}");
             float rotationSpeed = carRigidbody.angularVelocity.magnitude;
-            Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2} | Rotation: {rotationSpeed:F2}");
+            // Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2} | Rotation: {rotationSpeed:F2}");
         }
     }
 
@@ -110,12 +110,12 @@ public class ItemPhysics : MonoBehaviour
         // Console log to track stability state
         if (stability < 25f && stability > 0f)
         {
-            Debug.LogWarning("STABILITY CRITICAL!");
+            // Debug.LogWarning("STABILITY CRITICAL!");
         }
 
         if (stability <= 0f)
         {
-            Debug.LogError("CARGO FELL OFF!");
+            // Debug.LogError("CARGO FELL OFF!");
         }
 
         if (stability <= 0f && !itemsFallen)
@@ -166,7 +166,7 @@ public class ItemPhysics : MonoBehaviour
     void MakeItemsFall()
     {
         itemsFallen = true;
-        Debug.LogError("Falling items now");
+        // Debug.LogError("Falling items now");
 
         foreach (GameObject box in itemBoxes)
         {
@@ -210,7 +210,7 @@ public class ItemPhysics : MonoBehaviour
             float damage = impactForce * impactMultiplier;
             stability -= damage;
             stability = Mathf.Clamp(stability, 0f, 100f);
-            Debug.Log($"Collision, Impact force: {impactForce:F1} | Damage: {damage:F1} | Stability: {stability:F1}%");
+            // Debug.Log($"Collision, Impact force: {impactForce:F1} | Damage: {damage:F1} | Stability: {stability:F1}%");
         }
     }
 

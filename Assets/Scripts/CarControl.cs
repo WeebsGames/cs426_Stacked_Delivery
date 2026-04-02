@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
 public class CarControl : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class CarControl : MonoBehaviour
 
     [Header("OtherObjects")]
     public TMP_Text speedText;
+    public GameObject startPos;
 
     private void OnEnable()
     {
@@ -46,6 +48,17 @@ public class CarControl : MonoBehaviour
         wheels = GetComponentsInChildren<WheelControl>();
 
         speedText.text = "Speed: " + rigidBody.transform.forward.magnitude;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            rigidBody.transform.position = startPos.transform.position;
+            rigidBody.transform.rotation = startPos.transform.rotation;
+            rigidBody.linearVelocity = new Vector3(0,0,0);
+            Debug.Log("reset car pos");
+        }
     }
 
     // FixedUpdate is called at a fixed time interval 
@@ -87,11 +100,14 @@ public class CarControl : MonoBehaviour
             else
             {
                 // Apply brakes when reversing direction
-                wheel.WheelCollider.motorTorque = 0f;
-                wheel.WheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;
+                if (wheel.motorized)
+                {
+                    wheel.WheelCollider.motorTorque = 0f;
+                    wheel.WheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;
+                }
             }
         }
 
-        speedText.text = "Speed: " + rigidBody.transform.forward.magnitude;
+        speedText.text = "Speed: " + rigidBody.linearVelocity.magnitude;
     }
 }

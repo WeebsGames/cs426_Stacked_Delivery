@@ -13,16 +13,18 @@ public class NPCPathing : MonoBehaviour
     public WheelCollider wheelFR;
     public WheelCollider wheelBL;
     public WheelCollider wheelBR;
-    public int currentNode = 0;
+    public int startingNode = 0;
     public GameObject startPos;
 
     private List<Transform> nodes;    
     private Rigidbody rigidBody;
+    private int currentNode;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+        currentNode = startingNode;
         
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
         nodes = new List<Transform>();
@@ -43,6 +45,7 @@ public class NPCPathing : MonoBehaviour
             rigidBody.transform.position = startPos.transform.position;
             rigidBody.transform.rotation = startPos.transform.rotation;
             rigidBody.linearVelocity = new Vector3(0,0,0);
+            currentNode = startingNode;
             // Debug.Log("reset NPCcar pos");
         }
     }

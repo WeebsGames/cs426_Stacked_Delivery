@@ -60,7 +60,7 @@ public class CarControl : MonoBehaviour
             rigidBody.transform.position = startPos.transform.position;
             rigidBody.transform.rotation = startPos.transform.rotation;
             rigidBody.linearVelocity = new Vector3(0,0,0);
-            Debug.Log("reset car pos");
+            // Debug.Log("reset car pos");
         }
 
         //reduce friction of wheels to simulate handbraking

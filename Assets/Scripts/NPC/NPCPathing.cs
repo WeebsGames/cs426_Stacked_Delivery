@@ -13,9 +13,10 @@ public class NPCPathing : MonoBehaviour
     public WheelCollider wheelFR;
     public WheelCollider wheelBL;
     public WheelCollider wheelBR;
+    public int currentNode = 0;
+    public GameObject startPos;
 
-    private List<Transform> nodes;
-    private int currentNode = 0;
+    private List<Transform> nodes;    
     private Rigidbody rigidBody;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,6 +33,17 @@ public class NPCPathing : MonoBehaviour
             {
                 nodes.Add(pathTransforms[i]);
             }
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            rigidBody.transform.position = startPos.transform.position;
+            rigidBody.transform.rotation = startPos.transform.rotation;
+            rigidBody.linearVelocity = new Vector3(0,0,0);
+            // Debug.Log("reset NPCcar pos");
         }
     }
 
@@ -71,7 +83,7 @@ public class NPCPathing : MonoBehaviour
     void ApplySteer()
     {
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
-        print("Targeted Node: " + nodes[currentNode].name + " Relative Vector: " + relativeVector);
+        // print("Targeted Node: " + nodes[currentNode].name + " Relative Vector: " + relativeVector);
 
         //switch to next node when passing currentNode
         if(relativeVector.z < 0 && relativeVector.x < 1)

@@ -67,9 +67,9 @@ public class ItemPhysics : MonoBehaviour
         // This is just to showcase a stability tracker on the console
         if (Time.frameCount % 30 == 0)
         {
-            Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2}");
+            // Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2}");
             float rotationSpeed = carRigidbody.angularVelocity.magnitude;
-            Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2} | Rotation: {rotationSpeed:F2}");
+            // Debug.Log($"Stability: {stability:F1}% | Lateral G: {lateralG:F2} | Rotation: {rotationSpeed:F2}");
         }
     }
 
@@ -77,13 +77,22 @@ public class ItemPhysics : MonoBehaviour
     // calculateLateralGForce()
     //
     // This method calculates sideways forces from drifting/turning
-    // Goal: Sideways movement -> items slide off
+    // Goal: Sideways movement -> items fall off
+    // Calculate force by using flat plane by using sideways
+    // axis of car, removing the tilt from hills/slopes
+    // Dot gives +/- or 0, and get abs value of lateral force for both
+    // sides
     //
     float CalculateLateralGForce()
     {
-        Vector3 localVelocity = transform.InverseTransformDirection(carRigidbody.linearVelocity);
-        float lateralG = Mathf.Abs(localVelocity.x);
-        return lateralG;
+        Vector3 worldVel = carRigidbody.linearVelocity;
+        Vector3 carRight = transform.right;
+        carRight.y = 0;
+        carRight.Normalize();
+
+        float lateralG = Vector3.Dot(worldVel, carRight);
+
+        return Mathf.Abs(lateralG);
     }
 
     //
@@ -110,12 +119,12 @@ public class ItemPhysics : MonoBehaviour
         // Console log to track stability state
         if (stability < 25f && stability > 0f)
         {
-            Debug.LogWarning("STABILITY CRITICAL!");
+            // Debug.LogWarning("STABILITY CRITICAL!");
         }
 
         if (stability <= 0f)
         {
-            Debug.LogError("CARGO FELL OFF!");
+            // Debug.LogError("CARGO FELL OFF!");
         }
 
         if (stability <= 0f && !itemsFallen)
@@ -134,9 +143,20 @@ public class ItemPhysics : MonoBehaviour
     //
     void UpdateStackVisual(float lateralG)
     {
-        Vector3 localVel = transform.InverseTransformDirection(carRigidbody.linearVelocity);
-        float targetTiltZ = -localVel.x * 7f;
+        // Get velocity and get car's sideways axis flat to ground
+        // and measure sideways velocity on flat plane when going up
+        // slope/hill
+        Vector3 worldVel = carRigidbody.linearVelocity;
+        Vector3 carRight = transform.right;
+        carRight.y = 0;
+        carRight.Normalize();
 
+        float lateralVel = Vector3.Dot(worldVel, carRight);
+        // negative to tilt stack opposite direction of movement
+        // 7f just for visual effect of tilt applied
+        float targetTiltZ = -lateralVel * 7f;
+
+        // stop tilt from tilting crazy
         targetTiltZ = Mathf.Clamp(targetTiltZ, -maxTiltAngle, maxTiltAngle);
 
         Quaternion targetRotation = Quaternion.Euler(0, 0, targetTiltZ);
@@ -146,6 +166,7 @@ public class ItemPhysics : MonoBehaviour
             Time.fixedDeltaTime * 5f
         );
 
+        // wobble when unstable
         if (stability < 25f)
         {
             float wobbleAmount = (25f - stability) / 25f;
@@ -166,7 +187,7 @@ public class ItemPhysics : MonoBehaviour
     void MakeItemsFall()
     {
         itemsFallen = true;
-        Debug.LogError("Falling items now");
+        // Debug.LogError("Falling items now");
 
         foreach (GameObject box in itemBoxes)
         {
@@ -198,7 +219,9 @@ public class ItemPhysics : MonoBehaviour
     {
         if (itemsFallen) return;
 
-        if (collision.gameObject.name == "Floor")
+        // ignore everything with the ground tag, all of the Road
+        // System child objects essentially
+        if (collision.gameObject.CompareTag("ground"))
         {
             return;
         }
@@ -210,7 +233,7 @@ public class ItemPhysics : MonoBehaviour
             float damage = impactForce * impactMultiplier;
             stability -= damage;
             stability = Mathf.Clamp(stability, 0f, 100f);
-            Debug.Log($"Collision, Impact force: {impactForce:F1} | Damage: {damage:F1} | Stability: {stability:F1}%");
+            // Debug.Log($"Collision with {collision.gameObject.name} | Impact: {impactForce:F1} | Damage: {damage:F1} | Stability: {stability:F1}%");
         }
     }
 
@@ -219,19 +242,8 @@ public class ItemPhysics : MonoBehaviour
     //
     // Returns current stability as a value from 0 to 1.
     // 0 = completely unstable, 1 = perfectly stable.
-    // Based on tilt angle compared to max allowed tilt.
-    //
     public float GetStability()
     {
-        if (itemStack == null) return 1f;
-
-        float currentTilt = Mathf.Abs(itemStack.localRotation.eulerAngles.z);
-
-        if (currentTilt > 180f)
-            currentTilt = 360f - currentTilt;
-
-        float stability = 1f - Mathf.Clamp01(currentTilt / maxTiltAngle);
-
-        return stability;
+        return stability / 100f;
     }
 }

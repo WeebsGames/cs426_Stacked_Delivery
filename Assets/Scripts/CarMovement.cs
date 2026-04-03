@@ -31,7 +31,7 @@ public class CarMovement : MonoBehaviour
     void Update()
     {
         //forward acceleration input
-        float speed = rb.linearVelocity.magnitude * 2;
+        float speed = rb.linearVelocity.magnitude;
 
         if(Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
         { 
@@ -77,25 +77,23 @@ public class CarMovement : MonoBehaviour
             t.eulerAngles = new Vector3(0,0,0);
         }
 
-        //linear velocity formula
-        // float ke = 0.5f * rb.mass * (vel * vel); //--velocity kept increasing exponentially
-        float ke = math.sqrt(math.abs(vel*2));
-        // float ke = vel;
+       float ke = math.sqrt(2*math.abs(vel*4));
+
         //rotate car
-        t.Rotate(0,steeringRadius*turn,0,Space.Self);
+        t.Rotate(0,steeringRadius*turn*Time.deltaTime,0,Space.Self);
+        // print(t.right * turn);
 
         dir = t.forward * ke;
 
-        if (collisions > 0)
+        if (collisions > 0 && speed < maxSpeed)
         {
             rb.linearVelocity += dir * Time.deltaTime;
-        }        
+        } 
+        Vector3.Project(transform.forward * rb.linearVelocity.magnitude, rb.linearVelocity);
         // print("time since last frame: " + Time.deltaTime);
         // print("kinetic energy: " + ke);
         // print("vel: " + vel);
         // print("speed: " + Math.Round(rb.linearVelocity.magnitude));
-
-
     }
 
     void OnCollisionEnter(Collision collision)

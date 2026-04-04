@@ -31,16 +31,22 @@ Modified/Removed barriers for NPC AI navigation
 Updated skybox nighttime
 
 Character Design
-2 Mecanim examples
+3 Mecanim examples
 Added main menu rigged model
 Animations: Angry, Talking on phone 
 Added racer rigged model at finish in level
 Animations: Waving, Cheering
-2 AI Models
+Added roadside worker rigged model near hazard section
+Animations: Idle, Waving
+
+3 AI Models
 NPC car model driving along road
 Multiple nodes along road for waypoints
 NPC deer model walking across road
 3 point waypoint crossing along section of road
+Falling rock hazard using FSM near roadside hill section
+States: Waiting, Warning, Falling, Cooldown
+Trigger-based activation when player enters hazard zone
 
 Physics
 3 examples of physics

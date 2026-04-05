@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class CameraFollow : MonoBehaviour {
 
+	public enum State
+	{
+		PlayState,
+		PauseState
+	}
+	
 	public Transform carTransform;
 	[Range(1, 10)]
 	public float followSpeed = 2;
 	[Range(1, 10)]
 	public float lookSpeed = 5;
 	public Vector3 offset = new Vector3(0f, 5f, -8f);
+	public State state = State.PlayState;
+	public Transform PausePos;
 	Vector3 initialCameraPosition;
 	Vector3 initialCarPosition;
 	Vector3 absoluteInitCameraPosition;
@@ -22,6 +31,19 @@ public class CameraFollow : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		switch (state)
+		{
+			case State.PlayState:
+				Play();
+				break;
+			case State.PauseState:
+				Pause();
+				break;
+		}
+	}
+
+	void Play()
+	{
 		//Look at car
 		Vector3 _lookDirection = (new Vector3(carTransform.position.x, carTransform.position.y, carTransform.position.z)) - transform.position;
 		Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
@@ -33,6 +55,12 @@ public class CameraFollow : MonoBehaviour {
 		Vector3 desiredPosition = carTransform.position + carTransform.TransformDirection(offset);
         transform.position = Vector3.Lerp(transform.position, desiredPosition, lookSpeed * Time.deltaTime);
 
+	}
+
+	void Pause()
+	{
+		transform.position = PausePos.position;
+		transform.rotation = PausePos.rotation;
 	}
 
 }

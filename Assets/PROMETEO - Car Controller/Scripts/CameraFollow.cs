@@ -8,7 +8,8 @@ public class CameraFollow : MonoBehaviour {
 	public enum State
 	{
 		PlayState,
-		PauseState
+		PauseState,
+		MenuState
 	}
 	
 	public Transform carTransform;

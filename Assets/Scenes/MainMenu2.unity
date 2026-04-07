@@ -4471,6 +4471,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7bcb3ba9c70fae44da99df3c22f692b8, type: 3}
   m_PrefabInstance: {fileID: 456417508}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &459190786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 459190787}
+  m_Layer: 0
+  m_Name: GarageCamPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &459190787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459190786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.008033721, y: 0.4616878, z: -0.01543225, w: 0.8868718}
+  m_LocalPosition: {x: -5.012, y: 1.058, z: 5.745}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 698929608}
+  m_LocalEulerAnglesHint: {x: 0, y: 55.001, z: -1.994}
 --- !u!43 &479071132
 Mesh:
   m_ObjectHideFlags: 0
@@ -5929,6 +5960,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 459190787}
   - {fileID: 456417509}
   - {fileID: 2000274993}
   - {fileID: 277059873}

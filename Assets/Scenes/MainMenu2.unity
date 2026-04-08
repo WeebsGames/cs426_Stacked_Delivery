@@ -398,6 +398,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LvlOrbScript
   targetLvl: 5
+  locked: 1
+  unlockedMat: {fileID: 2100000, guid: 33964807431f48c4886cb0ed79f7c423, type: 2}
+  lockedMat: {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
+  selected: {fileID: 2100000, guid: 50228e51b78f89b4892301730d2428a9, type: 2}
 --- !u!64 &30779390
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -453,7 +457,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11576,7 +11580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: 0}
+  m_AnchoredPosition: {x: -3, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &349291444
@@ -20489,6 +20493,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LvlOrbScript
   targetLvl: 2
+  locked: 1
+  unlockedMat: {fileID: 2100000, guid: 33964807431f48c4886cb0ed79f7c423, type: 2}
+  lockedMat: {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
+  selected: {fileID: 2100000, guid: 50228e51b78f89b4892301730d2428a9, type: 2}
 --- !u!64 &1346142321
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20544,7 +20552,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30677,6 +30685,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LvlOrbScript
   targetLvl: 6
+  locked: 1
+  unlockedMat: {fileID: 2100000, guid: 33964807431f48c4886cb0ed79f7c423, type: 2}
+  lockedMat: {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
+  selected: {fileID: 2100000, guid: 50228e51b78f89b4892301730d2428a9, type: 2}
 --- !u!64 &1503359951
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30732,7 +30744,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -40184,6 +40196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LvlOrbScript
   targetLvl: 1
+  locked: 0
+  unlockedMat: {fileID: 2100000, guid: 33964807431f48c4886cb0ed79f7c423, type: 2}
+  lockedMat: {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
+  selected: {fileID: 2100000, guid: 50228e51b78f89b4892301730d2428a9, type: 2}
 --- !u!64 &1555279194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40239,7 +40255,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50228e51b78f89b4892301730d2428a9, type: 2}
+  - {fileID: 2100000, guid: 33964807431f48c4886cb0ed79f7c423, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -48837,11 +48853,11 @@ RectTransform:
   - {fileID: 349291443}
   m_Father: {fileID: 128831223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -790.5, y: 83}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 10, y: 83}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1639414082
 GameObject:
   m_ObjectHideFlags: 0
@@ -51849,6 +51865,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LvlOrbScript
   targetLvl: 4
+  locked: 1
+  unlockedMat: {fileID: 2100000, guid: 33964807431f48c4886cb0ed79f7c423, type: 2}
+  lockedMat: {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
+  selected: {fileID: 2100000, guid: 50228e51b78f89b4892301730d2428a9, type: 2}
 --- !u!64 &1821877706
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51904,7 +51924,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -60960,6 +60980,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LvlOrbScript
   targetLvl: 3
+  locked: 1
+  unlockedMat: {fileID: 2100000, guid: 33964807431f48c4886cb0ed79f7c423, type: 2}
+  lockedMat: {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
+  selected: {fileID: 2100000, guid: 50228e51b78f89b4892301730d2428a9, type: 2}
 --- !u!64 &1945161357
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61015,7 +61039,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

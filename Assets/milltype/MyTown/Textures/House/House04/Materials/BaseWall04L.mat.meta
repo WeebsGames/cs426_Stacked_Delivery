@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 25cb9259a7f25a2438400990b026d5cc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 177012
+  packageName: MyTown
+  packageVersion: 1.5
+  assetPath: Assets/milltype/MyTown/Textures/House/House04/Materials/BaseWall04L.mat
+  uploadId: 449972

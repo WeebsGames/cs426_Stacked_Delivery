@@ -16076,6 +16076,7 @@ MonoBehaviour:
   mainCamPos: {fileID: 946670087}
   mainButtons: {fileID: 1593952121}
   levelButtons: {fileID: 451584756}
+  cam: {fileID: 958802959}
 --- !u!43 &858106550
 Mesh:
   m_ObjectHideFlags: 0
@@ -17107,6 +17108,7 @@ GameObject:
   - component: {fileID: 958802961}
   - component: {fileID: 958802960}
   - component: {fileID: 958802963}
+  - component: {fileID: 958802964}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -17232,6 +17234,24 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &958802964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958802959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6d3ff905719c845a4a6404bc4d4162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  carTransform: {fileID: 0}
+  followSpeed: 2
+  lookSpeed: 5
+  offset: {x: 0, y: 0, z: -1}
+  state: 0
+  PausePos: {fileID: 0}
 --- !u!43 &978970333
 Mesh:
   m_ObjectHideFlags: 0

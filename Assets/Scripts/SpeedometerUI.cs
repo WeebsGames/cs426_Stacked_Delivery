@@ -1,5 +1,9 @@
 using UnityEngine;
 
+//
+//Speedometer uses current speed of carcontrol, set to 20f
+// added inspector fields to change value if needed
+//
 public class SpeedometerUI : MonoBehaviour
 {
     [Header("References")]

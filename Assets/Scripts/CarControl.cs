@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
+using NUnit.Framework;
 
 public class CarControl : MonoBehaviour
 {
@@ -66,7 +67,31 @@ public class CarControl : MonoBehaviour
         //reduce friction of wheels to simulate handbraking
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            handbraking = !handbraking;
+            handbraking = true;
+            brakeText.text = "Handbrake: " + handbraking;
+            print("Handbraking: " + handbraking);
+            foreach(var wheel in wheels)
+            {
+                if (wheel.motorized)
+                {
+                    sideFric = wheel.WheelCollider.sidewaysFriction;
+                    if (handbraking)
+                    {
+                        sideFric.stiffness = 0f;
+                    } else
+                    {
+                        sideFric.stiffness = 1f;
+                    }
+                    wheel.WheelCollider.sidewaysFriction = sideFric;
+                }
+            }
+
+            
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            handbraking = false;
             brakeText.text = "Handbrake: " + handbraking;
             print("Handbraking: " + handbraking);
             foreach(var wheel in wheels)

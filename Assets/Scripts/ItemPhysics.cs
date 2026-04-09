@@ -246,4 +246,9 @@ public class ItemPhysics : MonoBehaviour
     {
         return stability / 100f;
     }
+
+    public bool GetItemsFallen()
+    {
+        return itemsFallen;
+    }
 }

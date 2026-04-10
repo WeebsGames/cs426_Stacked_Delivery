@@ -7,8 +7,8 @@ using TMPro;
 //
 // Displays vehicle item stack stability value as a vertical bar meter.
 // Green = stable, Red = unstable.
-// Pulses and shows warning text when stability is critically low.
-// Shows permanent "Items Fallen!" text when stability reaches zero.
+// Pulses and shows "Unstable" text when stability is critically low.
+// Shows permanent "Boxes Fallen!" text when stability reaches zero.
 // Updates in real-time based on ItemPhysics stability value.
 //
 public class StabilityMeterUI : MonoBehaviour
@@ -16,16 +16,17 @@ public class StabilityMeterUI : MonoBehaviour
     [Header("References")]
     public ItemPhysics itemPhysics;
     public Image fillImage;
-    public TMP_Text warningText;
-    public TMP_Text itemsFallenText;
+    public TMP_Text unstableText;
+    public TMP_Text boxesFallenText;
+    public TMP_Text boxesStableText;
 
     [Header("Colors")]
     public Color stableColor = Color.green;
     public Color unstableColor = Color.red;
 
-    [Header("Warning Settings")]
-    public float criticalThreshold = 0.3f;
-    public float pulseSpeed = 5f;
+    [Header("Unstable text Settings")]
+    public float criticalThreshold = 0.5f;
+    public float pulseSpeed = 10f;
 
     void Update()
     {
@@ -60,36 +61,42 @@ public class StabilityMeterUI : MonoBehaviour
     //
     // UpdateWarning()
     //
-    // Shows and pulses UNSTABLE warning text when stability is critically low.
+    // Shows and pulses "Unstable" warning text when stability is critically low.
     // Shows permanent Items Fallen text when stability reaches zero.
+    // Shows "Boxes Stable" text when stability is above threshold.
     //
     void UpdateWarning()
     {
-        if (warningText == null) return;
+        if (unstableText == null) return;
 
         float stability = itemPhysics.GetStability();
         bool fallen = itemPhysics.GetItemsFallen();
 
         if (fallen)
         {
-            warningText.gameObject.SetActive(false);
-            if (itemsFallenText != null)
-                itemsFallenText.gameObject.SetActive(true);
+            unstableText.gameObject.SetActive(false);
+            if (boxesStableText != null)
+                boxesStableText.gameObject.SetActive(false);
+            if (boxesFallenText != null)
+                boxesFallenText.gameObject.SetActive(true);
         }
         else if (stability <= criticalThreshold)
         {
             float pulse = (Mathf.Sin(Time.time * pulseSpeed) + 1f) / 2f;
-            warningText.gameObject.SetActive(true);
-            warningText.alpha = pulse;
-
-            if (itemsFallenText != null)
-                itemsFallenText.gameObject.SetActive(false);
+            unstableText.gameObject.SetActive(true);
+            unstableText.alpha = pulse;
+            if (boxesStableText != null)
+                boxesStableText.gameObject.SetActive(false);
+            if (boxesFallenText != null)
+                boxesFallenText.gameObject.SetActive(false);
         }
         else
         {
-            warningText.gameObject.SetActive(false);
-            if (itemsFallenText != null)
-                itemsFallenText.gameObject.SetActive(false);
+            unstableText.gameObject.SetActive(false);
+            if (boxesStableText != null)
+                boxesStableText.gameObject.SetActive(true);
+            if (boxesFallenText != null)
+                boxesFallenText.gameObject.SetActive(false);
         }
     }
 }

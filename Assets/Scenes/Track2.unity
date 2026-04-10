@@ -6812,9 +6812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StabilityMeterUI
   itemPhysics: {fileID: 325346464}
   fillImage: {fileID: 1245113670}
-  unstableText: {fileID: 0}
-  boxesFallenText: {fileID: 0}
-  boxesStableText: {fileID: 0}
+  unstableText: {fileID: 1835455413}
+  boxesFallenText: {fileID: 1626389929}
+  boxesStableText: {fileID: 2065288297}
   stableColor: {r: 0, g: 1, b: 0, a: 1}
   unstableColor: {r: 1, g: 0, b: 0, a: 1}
   criticalThreshold: 0.5

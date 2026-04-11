@@ -6,55 +6,47 @@ The player needs to navigate through the levels while avoiding obstacles such as
 
 To show the player the urgency of the task, the time has been set to night to simulate a late night emergency delivery. Think of it this way: Its 11:50pm and you have to make a same day delivery!
 
-Assignment 6 details
-Goals:
-3 Forms of 3D Physics
-Box Physics
-Car Physics
-Collisions
-3 Lights and Textures
-Lights: Car headlights, Street lights, Traffic lights
-Textures: Added terrain texture (3 different textures), updated texture for npc car. 
-2-3 AI Techniques
-FSM, idea was to have a car model react to player car when nearby
-Pathfinding, idea was to have a pedestrian or animal follow a path down the road and/or crossing streets
-2-3 Mecanin examples
+Assignment 7 Details:
+UI Design details:
+2-3 instances of UI improvement based off of our current demo/prototype
 
-Details:
-Level Design
-Decorated level
-Trees, bushes, rocks, etc. objects throughout level
-Texures: Added grass, dirt, rock textures to Terrain
-Added streetlights, stop/traffic lights
-Added custom house model
-Modified/Removed barriers for NPC AI navigation
-Updated skybox nighttime
+(Anthony) Speedometer: Currently there is no feedback for how fast the vehicle is going, so it would be nice to add a speedometer for feedback to add to the visual of speed. The stability meter also needs to be more clear that it is for the stability of the boxes/items on top of the vehicle, so adding Text stating what the bar purpose on the screen, it more clear for the user/player what that UI element is for. 
+Color: Color for the text matches the level of stability of the meter, where the color states matches the bar fill color
+Green: Stability is fine
+Orange: Stability is unstable/critical stability for the boxes
+Red: Boxes flew out the car
+These colors people would typically map and associate with levels of good and bad states, which is why the text also matches the stability fill color states to reflect the stability of the boxes
+(Areeb): Menu update: Currently menu static in transitions between menu scenes
+Fix: Making menu more dynamic and transitions flow more naturally between menu scenes
+Binding of Issac menu example
+Could also just have an animated background for certain menu scenes (ex level select)
 
-Character Design
-3 Mecanim examples
-Added main menu rigged model
-Animations: Angry, Talking on phone 
-Added racer rigged model at finish in level
-Animations: Waving, Cheering
-Added roadside worker rigged model near hazard section
-Animations: Idle, Waving
+Sound Effects added:
+ - Tire Screech
+ - Collision FX
+The sound effects make the driving feel more immersive and give feedback to the player to let them know when they have crashed and when they are drifting.
 
-3 AI Models
-NPC car model driving along road
-Multiple nodes along road for waypoints
-NPC deer model walking across road
-3 point waypoint crossing along section of road
-Falling rock hazard using FSM near roadside hill section
-States: Waiting, Warning, Falling, Cooldown
-Trigger-based activation when player enters hazard zone
+UI Improvements:
+Instead of a canvas for the main menu, a 3D environment is used for more immersion. The level select and controls screen are in the same scene to make the transistions feel smooth. A simple pause menu was added to the game to allow the player to restart or quit the game. The stability meter has a label and warnings for low stability to make it more clear to the player what it represents. A speedometer was added to show the player how fast they are going.
 
-Physics
-3 examples of physics
-Car physics: Vehicle’s forward procedure (w-key) applies to force motorized wheels
-Box physics: Box objects stack affected by lateral force on vehicle lateral axis (x)
-The more the vehicle turns over time, the more the stability of boxes affected
-Collisions: Box stack stability affected by collision detection. Vehicle also affected by collisions
-Vehicle uses Mesh collider on body, Wheel Colliders on wheels
+Playtesting questions specific for our game
+Notes on what information/data we are trying to gather from play testers
 
+ - UI
+ - Procedures
+ - Level Design: Objective of the game? 
+ - Outcome: When players fail, what should happen
+ - When players success (reach the finish zone, with boxes) what should happen?
+ - Other elements questions
+ - Is the need for a restart button necessary? 
+
+Music used:
+https://opengameart.org/content/super-santa-claus
+https://opengameart.org/content/technomania101-2000s-europop-electronic-dance-music
+https://opengameart.org/content/fever-stadium
+https://youtu.be/mHJ3l18YqNM?si=dRvXFFFYrme8U0q6
+https://youtu.be/sx2rNv-NJ-U?si=jrjkhxFGlLBXuBmc
+https://youtu.be/InGGr5LIshk?si=zS2MR-2VKbU5bmpj
+https://youtu.be/9Kq89qHGRK8?si=FK5LjVFEXvWnRl5o
 
 Itch.io link to download the game: https://areebj.itch.io/stacked-delivery

@@ -24,7 +24,9 @@ Could also just have an animated background for certain menu scenes (ex level se
 Sound Effects added:
  - Tire Screech
  - Collision FX
-The sound effects make the driving feel more immersive and give feedback to the player to let them know when they have crashed and when they are drifting.
+ - Box falling FX
+ - Alarm
+The sound effects make the driving feel more immersive and give feedback to the player to let them know when they have crashed and when they are drifting. The alarm tells the player to be more careful or else their boxes will fall over. If the player's boxes fall over, the sound effect informs the player of their mistake.
 
 UI Improvements:
 Instead of a canvas for the main menu, a 3D environment is used for more immersion. The level select and controls screen are in the same scene to make the transistions feel smooth. A simple pause menu was added to the game to allow the player to restart or quit the game. The stability meter has a label and warnings for low stability to make it more clear to the player what it represents. A speedometer was added to show the player how fast they are going.
@@ -40,14 +42,16 @@ Notes on what information/data we are trying to gather from play testers
  - Other elements questions
  - Is the need for a restart button necessary? 
 
-Music used:
-https://opengameart.org/content/super-santa-claus
-https://opengameart.org/content/technomania101-2000s-europop-electronic-dance-music
-https://opengameart.org/content/fever-stadium
-https://youtu.be/mHJ3l18YqNM?si=dRvXFFFYrme8U0q6
-https://youtu.be/sx2rNv-NJ-U?si=jrjkhxFGlLBXuBmc
-https://youtu.be/InGGr5LIshk?si=zS2MR-2VKbU5bmpj
-https://youtu.be/9Kq89qHGRK8?si=FK5LjVFEXvWnRl5o
-https://youtu.be/lGCBPFx-hmM?si=mndhf8HcWAyk0Eni
+Audio used:
+https://opengameart.org/content/super-santa-claus - christmas themed music for level 2
+https://opengameart.org/content/technomania101-2000s-europop-electronic-dance-music - unused
+https://opengameart.org/content/fever-stadium - upbeat music for level 1
+https://opengameart.org/content/alarm-1 - warn player of impending doom
+https://youtu.be/mHJ3l18YqNM?si=dRvXFFFYrme8U0q6 - indicate win state to player
+https://youtu.be/sx2rNv-NJ-U?si=jrjkhxFGlLBXuBmc - main menu music
+https://youtu.be/InGGr5LIshk?si=zS2MR-2VKbU5bmpj - main menu music
+https://youtu.be/9Kq89qHGRK8?si=FK5LjVFEXvWnRl5o - main menu music
+https://youtu.be/lGCBPFx-hmM?si=mndhf8HcWAyk0Eni - audio feeback for boxes falling over
+https://youtu.be/M1MUvFyOWkY?si=TyrMvSEhZb_7Qt5G - indicate failure to the player
 
 Itch.io link to download the game: https://areebj.itch.io/stacked-delivery

@@ -6792,9 +6792,41 @@ PrefabInstance:
       propertyPath: 'muteAudio.Array.data[2]'
       value: 
       objectReference: {fileID: 325346463}
+    - target: {fileID: 6025656796332882963, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025656796332882963, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025656796332882963, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -757.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025656796332882963, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -272
+      objectReference: {fileID: 0}
     - target: {fileID: 6278589595365261211, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428260542054756051, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428260542054756051, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428260542054756051, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -753.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428260542054756051, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -271
       objectReference: {fileID: 0}
     - target: {fileID: 6826355026268649578, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_Pivot.x

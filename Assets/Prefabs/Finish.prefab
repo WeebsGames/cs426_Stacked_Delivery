@@ -308,4 +308,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::finishscirpt
   finishSound: {fileID: 0}
-  finishClip: {fileID: 8300000, guid: d19574edbd7a397468662eb5d497c6dd, type: 3}
+  finishClip: {fileID: 8300000, guid: bc5fcee99a5a6b74b8c2bb5bd8dde7a2, type: 3}

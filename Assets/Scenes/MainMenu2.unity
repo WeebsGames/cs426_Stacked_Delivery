@@ -10622,9 +10622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   clips:
-  - {fileID: 8300000, guid: e3fdc9d2bf184b84a95d4245c5728d12, type: 3}
-  - {fileID: 8300000, guid: 2a80a674c7506d7479e34f2623692f17, type: 3}
-  - {fileID: 8300000, guid: d15c853e0b9e74a43abe9d42c114d97b, type: 3}
+  - {fileID: 8300000, guid: b45fe1b774781db41b2d46543944b906, type: 3}
   source: {fileID: 539875295}
 --- !u!43 &147570637
 Mesh:

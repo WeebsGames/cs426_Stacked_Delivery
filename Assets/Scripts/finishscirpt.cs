@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class finishscirpt : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    public AudioSource finishSound;
+    public AudioClip finishClip;
+    
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(other.tag == "Player")
+        {
+            print("finish");
+            finishSound.Stop();
+            finishSound.clip = finishClip;
+            finishSound.Play();
+            
+            return;
+        }
     }
 }

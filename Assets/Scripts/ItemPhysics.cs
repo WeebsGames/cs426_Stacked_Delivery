@@ -109,11 +109,6 @@ public class ItemPhysics : MonoBehaviour
 
         stability -= stabilityLoss * Time.fixedDeltaTime;
 
-        if (lateralG < smoothDrivingThreshold && rotationSpeed < 1.5f)
-        {
-            stability += recoveryRate * Time.fixedDeltaTime;
-        }
-
         stability = Mathf.Clamp(stability, 0f, 100f);
 
         // Console log to track stability state
@@ -131,6 +126,13 @@ public class ItemPhysics : MonoBehaviour
         {
             MakeItemsFall();
         }
+        
+        
+        if (lateralG < smoothDrivingThreshold && rotationSpeed < 1.5f)
+        {
+            stability += recoveryRate * Time.fixedDeltaTime;
+        }
+
     }
 
     //
@@ -227,6 +229,7 @@ public class ItemPhysics : MonoBehaviour
         }
 
         float impactForce = collision.impulse.magnitude;
+        // print("Impact force " + impactForce);
 
         if (impactForce > impactThreshold)
         {

@@ -32,6 +32,7 @@ public class LvlOrbScript : MonoBehaviour
 
     void OnMouseDown()
     {
+        print("Track"+targetLvl);
         SceneManager.LoadScene("Track" + targetLvl);
     }
 

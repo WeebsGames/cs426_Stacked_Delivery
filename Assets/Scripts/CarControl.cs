@@ -14,11 +14,14 @@ public class CarControl : MonoBehaviour
     public float steeringRange = 30f;
     public float steeringRangeAtMaxSpeed = 10f;
     public float centreOfGravityOffset = -1f;
+    public int crashThreshold = 100;
+    public AudioSource crashSource;
 
     private WheelControl[] wheels;
     private Rigidbody rigidBody;
     private WheelFrictionCurve sideFric;
     private bool handbraking = false;
+    private float prevSpeed;
     
     [Header("Input Actions")]
     public InputActionReference moveAction;
@@ -77,7 +80,7 @@ public class CarControl : MonoBehaviour
                     sideFric = wheel.WheelCollider.sidewaysFriction;
                     if (handbraking)
                     {
-                        sideFric.stiffness = 0f;
+                        sideFric.stiffness = 0.1f;
                     } else
                     {
                         sideFric.stiffness = 1f;
@@ -110,6 +113,8 @@ public class CarControl : MonoBehaviour
                 }
             }
         }
+
+        prevSpeed = rigidBody.linearVelocity.magnitude;
     }
 
     // FixedUpdate is called at a fixed time interval 
@@ -161,4 +166,16 @@ public class CarControl : MonoBehaviour
 
         // speedText.text = "Speed: " + rigidBody.linearVelocity.magnitude;
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // print("prevSpeed "+prevSpeed);
+        if(prevSpeed > crashThreshold && rigidBody.linearVelocity.magnitude < 0.7 * prevSpeed)
+        {
+            // print("crashed");
+            crashSource.time = 1.8f;
+            crashSource.Play();
+        }
+    }
+
 }

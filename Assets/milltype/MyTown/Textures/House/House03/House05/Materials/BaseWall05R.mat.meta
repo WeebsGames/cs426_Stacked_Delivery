@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dbbe5435ce3c407468b34e5f6102164a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 177012
+  packageName: MyTown
+  packageVersion: 1.5
+  assetPath: Assets/milltype/MyTown/Textures/House/House05/Materials/BaseWall05R.mat
+  uploadId: 449972

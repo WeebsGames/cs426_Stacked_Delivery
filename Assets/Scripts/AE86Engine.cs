@@ -25,6 +25,11 @@ public class AE86Engine : MonoBehaviour
     {
         source.pitch = 0.5f + rb.linearVelocity.magnitude/12f;
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // source.mute = !source.mute;
+        }
+
         // // source.volume = rb.linearVelocity.magnitude;
         // if(rb.linearVelocity.magnitude == 0)
         // {

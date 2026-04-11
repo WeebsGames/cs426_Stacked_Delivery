@@ -25992,7 +25992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LvlOrbScript
   targetLvl: 2
-  locked: 1
+  locked: 0
   unlockedMat: {fileID: 2100000, guid: 33964807431f48c4886cb0ed79f7c423, type: 2}
   lockedMat: {fileID: 2100000, guid: 237e23d01b6d04346bc22fc26801fcf0, type: 2}
   selected: {fileID: 2100000, guid: 50228e51b78f89b4892301730d2428a9, type: 2}

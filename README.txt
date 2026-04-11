@@ -48,5 +48,6 @@ https://youtu.be/mHJ3l18YqNM?si=dRvXFFFYrme8U0q6
 https://youtu.be/sx2rNv-NJ-U?si=jrjkhxFGlLBXuBmc
 https://youtu.be/InGGr5LIshk?si=zS2MR-2VKbU5bmpj
 https://youtu.be/9Kq89qHGRK8?si=FK5LjVFEXvWnRl5o
+https://youtu.be/lGCBPFx-hmM?si=mndhf8HcWAyk0Eni
 
 Itch.io link to download the game: https://areebj.itch.io/stacked-delivery

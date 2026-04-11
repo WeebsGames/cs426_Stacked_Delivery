@@ -32,6 +32,8 @@ public class ItemPhysics : MonoBehaviour
     public float impactMultiplier = 5f;
     public float impactThreshold = 8f;
 
+    public AudioSource source;
+
     // assuming car has rigidbody component
     private Rigidbody carRigidbody;
     private bool itemsFallen = false;
@@ -190,6 +192,8 @@ public class ItemPhysics : MonoBehaviour
     {
         itemsFallen = true;
         // Debug.LogError("Falling items now");
+
+        source.Play();
 
         foreach (GameObject box in itemBoxes)
         {

@@ -27,6 +27,9 @@ public class StabilityMeterUI : MonoBehaviour
     [Header("Unstable text Settings")]
     public float criticalThreshold = 0.5f;
     public float pulseSpeed = 10f;
+    public AudioSource source;
+    public AudioSource music;
+    public AudioClip fail;
 
     void Update()
     {
@@ -74,14 +77,20 @@ public class StabilityMeterUI : MonoBehaviour
 
         if (fallen)
         {
+            source.Stop();
+            source.clip = fail;
+            source.Play();
+            music.Stop();
             unstableText.gameObject.SetActive(false);
             if (boxesStableText != null)
                 boxesStableText.gameObject.SetActive(false);
             if (boxesFallenText != null)
                 boxesFallenText.gameObject.SetActive(true);
+            GetComponent<StabilityMeterUI>().enabled = false;
         }
         else if (stability <= criticalThreshold)
         {
+            source.UnPause();
             float pulse = (Mathf.Sin(Time.time * pulseSpeed) + 1f) / 2f;
             unstableText.gameObject.SetActive(true);
             unstableText.alpha = pulse;
@@ -92,6 +101,7 @@ public class StabilityMeterUI : MonoBehaviour
         }
         else
         {
+            source.Pause();
             unstableText.gameObject.SetActive(false);
             if (boxesStableText != null)
                 boxesStableText.gameObject.SetActive(true);

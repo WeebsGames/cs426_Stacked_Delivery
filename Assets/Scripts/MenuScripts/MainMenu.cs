@@ -5,12 +5,16 @@ public class MainMenu : MonoBehaviour
 {
     public Transform lvlCamPos;
     public Transform mainCamPos;
+    public Transform controlsCamPos;
     public GameObject mainButtons;
     public GameObject levelButtons;
     public GameObject cam;
+
+    Transform lastPos;
     public void PlayGame()
     {
         // SceneManager.LoadScene("LevelSelect");
+        lastPos = cam.GetComponent<CameraFollow>().carTransform;
         cam.GetComponent<CameraFollow>().carTransform = lvlCamPos;
         // Camera.main.transform.position = lvlCamPos.position;
         // Camera.main.transform.rotation = lvlCamPos.rotation;
@@ -20,11 +24,25 @@ public class MainMenu : MonoBehaviour
     }
     public void Back()
     {
+        // lastPos = cam.GetComponent<CameraFollow>().carTransform;
         mainButtons.SetActive(true);
         levelButtons.SetActive(false);
-        cam.GetComponent<CameraFollow>().carTransform = mainCamPos;
+        cam.GetComponent<CameraFollow>().carTransform = lastPos;
         // Camera.main.transform.position = mainCamPos.position;
         // Camera.main.transform.rotation = mainCamPos.rotation;
+    }
+
+    public void Controls()
+    {
+        mainButtons.SetActive(false);
+        levelButtons.SetActive(true);
+        lastPos = cam.GetComponent<CameraFollow>().carTransform;
+        cam.GetComponent<CameraFollow>().carTransform = controlsCamPos;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     void Update()
@@ -33,10 +51,5 @@ public class MainMenu : MonoBehaviour
         {
             Back();
         }
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }

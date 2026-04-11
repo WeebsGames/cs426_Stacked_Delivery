@@ -32,15 +32,12 @@ public class CameraFollow : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		switch (state)
+		if(state == State.PlayState)
 		{
-			case State.PlayState:
-				Play();
-				break;
-			case State.PauseState:
-				Pause();
-				break;
+			Play();
+			return;
 		}
+		Pause();
 	}
 
 	void Play()

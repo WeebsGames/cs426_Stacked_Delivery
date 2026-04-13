@@ -6985,6 +6985,10 @@ PrefabInstance:
       propertyPath: itemPhysics
       value: 
       objectReference: {fileID: 325346464}
+    - target: {fileID: 3017258045158231818, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3196453363080364233, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: level
       value: 2
@@ -7005,6 +7009,50 @@ PrefabInstance:
       propertyPath: 'muteAudio.Array.data[2]'
       value: 
       objectReference: {fileID: 325346463}
+    - target: {fileID: 3905547757824047709, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905547757824047709, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905547757824047709, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905547757824047709, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 804
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905547757824047709, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -329
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492144906490781314, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492144906490781314, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492144906490781314, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492144906490781314, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492144906490781314, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1022
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492144906490781314, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 534
+      objectReference: {fileID: 0}
     - target: {fileID: 6025656796332882963, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7035,11 +7083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6428260542054756051, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -753.5
+      value: -78
       objectReference: {fileID: 0}
     - target: {fileID: 6428260542054756051, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -271
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 6826355026268649578, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_Pivot.x
@@ -7120,6 +7168,18 @@ PrefabInstance:
     - target: {fileID: 6826355026268649578, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032611456888364330, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032611456888364330, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032611456888364330, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

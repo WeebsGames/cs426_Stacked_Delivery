@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     public GameObject mainButtons;
     public GameObject levelButtons;
     public GameObject cam;
+    public GameObject credits;
+    public GameObject controls;
 
     Transform lastPos;
     public void PlayGame()
@@ -36,6 +38,18 @@ public class MainMenu : MonoBehaviour
     {
         mainButtons.SetActive(false);
         levelButtons.SetActive(true);
+        controls.SetActive(true);
+        credits.SetActive(false);
+        lastPos = cam.GetComponent<CameraFollow>().carTransform;
+        cam.GetComponent<CameraFollow>().carTransform = controlsCamPos;
+    }
+
+    public void Credits()
+    {
+        mainButtons.SetActive(false);
+        levelButtons.SetActive(true);
+        controls.SetActive(false);
+        credits.SetActive(true);
         lastPos = cam.GetComponent<CameraFollow>().carTransform;
         cam.GetComponent<CameraFollow>().carTransform = controlsCamPos;
     }

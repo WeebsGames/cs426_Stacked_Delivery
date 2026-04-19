@@ -34,6 +34,9 @@ public class ItemPhysics : MonoBehaviour
 
     public AudioSource source;
 
+    public LevelEnd levelEnd;
+    public LevelTimer levelTimer;
+
     // assuming car has rigidbody component
     private Rigidbody carRigidbody;
     private bool itemsFallen = false;
@@ -128,8 +131,8 @@ public class ItemPhysics : MonoBehaviour
         {
             MakeItemsFall();
         }
-        
-        
+
+
         if (lateralG < smoothDrivingThreshold && rotationSpeed < 1.5f)
         {
             stability += recoveryRate * Time.fixedDeltaTime;
@@ -213,6 +216,16 @@ public class ItemPhysics : MonoBehaviour
 
             boxRB.AddTorque(Random.insideUnitSphere * fallForce, ForceMode.Impulse);
         }
+
+        Invoke("TriggerLoseCargo", 2f);
+    }
+
+    // Called after a 2 second delay to show level end panel and to
+    // stop timer.
+    void TriggerLoseCargo()
+    {
+        if (levelTimer != null) levelTimer.StopTimer();
+        if (levelEnd != null) levelEnd.LoseCargo();
     }
 
     //

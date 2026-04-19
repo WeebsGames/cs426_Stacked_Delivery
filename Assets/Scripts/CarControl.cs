@@ -128,12 +128,19 @@ public class CarControl : MonoBehaviour
         float forwardSpeed = Vector3.Dot(transform.forward, rigidBody.linearVelocity);
         float speedFactor = Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed)); // Normalized speed factor
 
+        //incentivise drifting
+        if (handbraking)
+        {
+            speedFactor = Mathf.InverseLerp(0, maxSpeed * 1.5f, Mathf.Abs(forwardSpeed));
+        }
+
         // Reduce motor torque and steering at high speeds for better handling
         float currentMotorTorque = Mathf.Lerp(motorTorque, 0, speedFactor);
         float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, speedFactor);
 
         // Determine if the player is accelerating or trying to reverse
         bool isAccelerating = Mathf.Sign(vInput) == Mathf.Sign(forwardSpeed);
+
 
         foreach (var wheel in wheels)
         {

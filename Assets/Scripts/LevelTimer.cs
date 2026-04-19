@@ -2,10 +2,13 @@ using UnityEngine;
 using TMPro;
 
 // Counts down level time and updates a UI text display.
+// Triggers LevelEnd.Lose when time runs out, or stops when 
+// StopTimer is called externally.
 public class LevelTimer : MonoBehaviour
 {
     [SerializeField] private float timeLimit = 90f;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private LevelEnd levelEnd;
 
     private float timeRemaining;
     private bool isRunning = true;
@@ -16,8 +19,7 @@ public class LevelTimer : MonoBehaviour
         timeRemaining = timeLimit;
     }
 
-    // Count down each frame and update the display, if the timer 
-    // is still running.
+    // Count down each frame and update the display, if the timer is still running.
     private void Update()
     {
         if (!isRunning) return;
@@ -28,13 +30,13 @@ public class LevelTimer : MonoBehaviour
         {
             timeRemaining = 0f;
             isRunning = false;
-            // fail code if the time runs out
+            levelEnd.Lose();
         }
 
         UpdateTimerText();
     }
 
-    // time as M:SS and update the UI text.
+    // Format time as M:SS and update the UI text.
     private void UpdateTimerText()
     {
         int minutes = Mathf.FloorToInt(timeRemaining / 60f);
@@ -42,6 +44,8 @@ public class LevelTimer : MonoBehaviour
         timerText.text = minutes + ":" + seconds.ToString("00");
     }
 
+    // Stops the timer. Called by the finish trigger when the player 
+    // reaches the end.
     public void StopTimer()
     {
         isRunning = false;

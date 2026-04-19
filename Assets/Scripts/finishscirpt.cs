@@ -6,6 +6,8 @@ public class finishscirpt : MonoBehaviour
     public AudioSource finishSound;
     public AudioClip finishClip;
     public LevelTimer levelTimer;
+    public LevelEnd levelEnd;
+    public ItemPhysics itemPhysics;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,6 +21,18 @@ public class finishscirpt : MonoBehaviour
             if (levelTimer != null)
             {
                 levelTimer.StopTimer();
+            }
+
+            if (levelEnd != null)
+            {
+                if (itemPhysics != null && itemPhysics.GetItemsFallen())
+                {
+                    levelEnd.LoseCargo();
+                }
+                else
+                {
+                    levelEnd.Win();
+                }
             }
 
             return;

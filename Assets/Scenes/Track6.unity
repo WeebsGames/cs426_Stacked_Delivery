@@ -1187,13 +1187,21 @@ PrefabInstance:
       value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 8836083808908890979, guid: 580eacbf957ae864b88b943e14f73277, type: 3}
+      propertyPath: levelEnd
+      value: 
+      objectReference: {fileID: 1075118816}
+    - target: {fileID: 8836083808908890979, guid: 580eacbf957ae864b88b943e14f73277, type: 3}
       propertyPath: levelTimer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1455510837}
     - target: {fileID: 8836083808908890979, guid: 580eacbf957ae864b88b943e14f73277, type: 3}
       propertyPath: finishSound
       value: 
       objectReference: {fileID: 1010931049}
+    - target: {fileID: 8836083808908890979, guid: 580eacbf957ae864b88b943e14f73277, type: 3}
+      propertyPath: itemPhysics
+      value: 
+      objectReference: {fileID: 754780975}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27458,7 +27466,7 @@ MonoBehaviour:
   autoSetControlPoints: 0
   points:
   - {x: 0.000021904707, y: 0.28975296, z: 0.000005722046}
-  - {x: 0.0000218451, y: 0.28975296, z: 1.0000302}
+  - {x: 0.0000218451, y: 0.28975296, z: 1.0000316}
   - {x: 0.0000035464764, y: -0.25758743, z: 9.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 10.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 25.46409}
@@ -28029,6 +28037,8 @@ MonoBehaviour:
   impactMultiplier: 0.01
   impactThreshold: 4000
   source: {fileID: 412240936}
+  levelEnd: {fileID: 1075118816}
+  levelTimer: {fileID: 1455510837}
 --- !u!4 &795076524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
@@ -30797,6 +30807,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &1075118816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8422349680271645709, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+  m_PrefabInstance: {fileID: 215235784810627309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98cd5d597e0eed45b691eb888357555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelEnd
 --- !u!1001 &1082720248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33853,6 +33874,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5202732821079344928, guid: cebfacc247a640945a2c30b442202fca, type: 3}
   m_PrefabInstance: {fileID: 1170137266}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1455510837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6024858010206668274, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+  m_PrefabInstance: {fileID: 215235784810627309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704404ce275e06842974d8821df8f9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelTimer
 --- !u!1 &1462143026
 GameObject:
   m_ObjectHideFlags: 0
@@ -34881,7 +34913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6278589595365261211, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6428260542054756051, guid: 2ce800ee288567b4c997fbff17331e7f, type: 3}
       propertyPath: m_Pivot.x
@@ -38932,7 +38964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1730097785721970066, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2094009112928751513, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: music

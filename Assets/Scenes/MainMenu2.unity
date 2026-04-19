@@ -11882,7 +11882,7 @@ GameObject:
   - component: {fileID: 167769847}
   - component: {fileID: 167769846}
   m_Layer: 0
-  m_Name: Assets
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27238,7 +27238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1201157241
 RectTransform:
   m_ObjectHideFlags: 0

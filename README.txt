@@ -4,6 +4,10 @@ A single player car game where the objective is to deliver items to a designated
 
 The player needs to navigate through the levels while avoiding obstacles such as traffic and wildlife to get to the end of the level. Traffic forces the player to take different racing lines depending on how fast they are. Wildlife does the same, except is much more unpredictable and forces the player to be more cautious. The player must find the optimal balance between speed and safety to deliver the boxes on time. Streetlights guide the way through the level and show the player the recommended routing. Routes that aren't lit up are either suboptimal or are very difficult. 
 
+
+Itch.io link to download the game: https://areebj.itch.io/stacked-delivery
+
+
 To show the player the urgency of the task, the time has been set to night to simulate a late night emergency delivery. Think of it this way: Its 11:50pm and you have to make a same day delivery!
 
 Assignment 7 Details:
@@ -53,5 +57,32 @@ https://youtu.be/InGGr5LIshk?si=zS2MR-2VKbU5bmpj - main menu music
 https://youtu.be/9Kq89qHGRK8?si=FK5LjVFEXvWnRl5o - main menu music
 https://youtu.be/lGCBPFx-hmM?si=mndhf8HcWAyk0Eni - audio feeback for boxes falling over
 https://youtu.be/M1MUvFyOWkY?si=TyrMvSEhZb_7Qt5G - indicate failure to the player
+https://www.youtube.com/watch?v=6pyhHlxVzj4 - alt menu audio
+https://www.youtube.com/watch?v=ww1baEX3KdM - level 6 audio
 
-Itch.io link to download the game: https://areebj.itch.io/stacked-delivery
+references
+Terrain (grass, dirt) textures
+https://kaffeeaffe.itch.io/terrain-textures
+
+rock texture
+https://www.cgtrader.com/free-3d-models/textures/architectural-textures/rock-wall-texture-material
+
+stop light models
+https://www.cgtrader.com/free-3d-models/industrial/industrial-machine/low-poly-traffic-light
+
+nature objects asset
+https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153
+
+animal assets
+https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727#content
+
+
+racer mixamo link
+https://www.mixamo.com/#/?page=1&query=waving&type=Character
+
+and animations
+https://www.mixamo.com/#/?page=1&query=waving&type=Motion%2CMotionPack
+https://www.mixamo.com/#/?page=1&query=cheer&type=Motion%2CMotionPack
+
+additional references
+https://opengameart.org/content/snow-flake

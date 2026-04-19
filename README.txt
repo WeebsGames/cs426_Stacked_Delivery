@@ -86,3 +86,12 @@ https://www.mixamo.com/#/?page=1&query=cheer&type=Motion%2CMotionPack
 
 additional references
 https://opengameart.org/content/snow-flake
+https://assetstore.unity.com/packages/2d/textures-materials/water/simple-water-shader-urp-191449
+https://assetstore.unity.com/packages/p/yughues-free-sand-materials-12964
+https://assetstore.unity.com/packages/p/hq-pbr-old-retro-radio-free-180303
+https://assetstore.unity.com/packages/3d/environments/landscapes/mytown-177012
+https://assetstore.unity.com/packages/p/modular-storage-shelves-garage-organization-props-252198
+https://assetstore.unity.com/packages/p/allsky-free-10-sky-skybox-set-146014
+https://assetstore.unity.com/packages/p/road-system-192818
+https://assetstore.unity.com/packages/2d/textures-materials/nature/terrain-textures-free-271990
+https://assetstore.unity.com/packages/p/yughues-free-concrete-materials-12951

@@ -25823,6 +25823,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4974773089460762, guid: 2d17bc22786514949ab01db868b15dc0, type: 3}
   m_PrefabInstance: {fileID: 190204884}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &493104494 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6807259526026044060, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+  m_PrefabInstance: {fileID: 754780970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &493104495 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7511420083112800017, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+  m_PrefabInstance: {fileID: 754780970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &501299057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27471,7 +27481,7 @@ MonoBehaviour:
   autoSetControlPoints: 0
   points:
   - {x: 0.000021904707, y: 0.28975296, z: 0.000005722046}
-  - {x: 0.0000218451, y: 0.28975296, z: 1.0000343}
+  - {x: 0.0000218451, y: 0.28975296, z: 1.0000345}
   - {x: 0.0000035464764, y: -0.25758743, z: 9.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 10.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 25.46409}
@@ -38733,7 +38743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5905843093608628975, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: muteAudio.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5905843093608628975, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: 'muteAudio.Array.data[0]'
@@ -38747,6 +38757,14 @@ PrefabInstance:
       propertyPath: 'muteAudio.Array.data[2]'
       value: 
       objectReference: {fileID: 1010931049}
+    - target: {fileID: 5905843093608628975, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: 'muteAudio.Array.data[3]'
+      value: 
+      objectReference: {fileID: 493104495}
+    - target: {fileID: 5905843093608628975, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: 'muteAudio.Array.data[4]'
+      value: 
+      objectReference: {fileID: 493104494}
     - target: {fileID: 8061625383899381994, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: m_Pivot.x
       value: 0

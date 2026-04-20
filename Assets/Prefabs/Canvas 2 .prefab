@@ -191,10 +191,10 @@ RectTransform:
   - {fileID: 5435256298887144461}
   m_Father: {fileID: 8506361223945920233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 7.2197266, y: -2.5665894}
-  m_SizeDelta: {x: 924.47046, y: 401.5002}
+  m_SizeDelta: {x: 1022, y: 534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7524454556702381081
 CanvasRenderer:
@@ -3671,7 +3671,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Press Space to Handbrake
 
-    Press r to reset car pos'
+    Press r to reset car pos
+
+    Press ESC
+    to pause'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

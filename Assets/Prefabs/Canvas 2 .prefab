@@ -2329,7 +2329,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8506361223945920233}
-  - component: {fileID: 3755165150870808641}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -2357,24 +2356,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1022, y: 534}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3755165150870808641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5913600268546547458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cff0b5b1628abd4ea4125622a81c9a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  level: 1
-  text: {fileID: 771487435271574937}
-  others:
-  - {fileID: 3657105201931637316}
-  pause: {fileID: 0}
-  muteAudio: []
 --- !u!1 &6313620901475173865
 GameObject:
   m_ObjectHideFlags: 0

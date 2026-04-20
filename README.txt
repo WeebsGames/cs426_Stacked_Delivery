@@ -46,6 +46,21 @@ Notes on what information/data we are trying to gather from play testers
  - Other elements questions
  - Is the need for a restart button necessary? 
 
+Assignment 8 Details:
+
+Based on playtester feedback, we added and made a few adjustments to level design, procedures, and UI/feedback elements.
+
+Level design updates: Added more depth to design of tracks such as jumps and sharper turns, to increase challenge and “fun” design that was lacking in our previous levels. We added more obstacles such as objects that affect traction of the car. New Level 3 has “oil” object that causes vehicle to slip if the vehicle drives over “oil puddle”. These sorts of obstacles were noted by some of the playtesters, saying that adding some sort of obstacles relative to the theme of the level can add to the difficulty to the level (for example, Level 2 snow map, maybe adding ice on the road?). Playtesters noted that some levels were too easy without some sort of obstacles and such.
+
+Updated UI: Increased the size of UI elements such as speedometer and stability bar. We also added a timer. Some playtesters noted that they didn’t really notice the UI elements during gameplay. So we adjusted the size and position of these elements to make them more visible to the player. We also added the timer that counts down. This was originally not implemented for the Alpha, and playtesters noted that there was no real rush to complete level. So by adding this element, we want players to feel pressured to complete a level in time.
+
+Procedure updates: Added new feature to enforce drifting, where using drifting procedure, the vehicle’s top speed is increased. Playtesters noted that they didn’t need to use the drifting procedure, as they noted that there was no benefit. With this update, we want users to use drifting procedure now that they have the added pressure of completing a level before time runs out. 
+
+Level Completion update: Now when crossing finish line, the Finish line/object now triggers where players are now shown a new menu panel. If the player crosses the finish line in time and with the items still on the vehicle, then they are shown the level complete text and are able to click the following buttons: Next level, Quit, and Restart. Next level is shown when they complete the level in time and they are able to make it to the finish line with the items still on the car. Quit takes you to the main menu, and restart button restarts the level. Previously there was no sort of event that occurred when crossing finish line, so playtesters were confused on the end of a level.
+
+Gameplay update: When a player loses their items/cargo, there was no sequence of events that causes the level to pause. We added a panel that displays for the player to restart level or quit. Playtesters noted that they didn’t really see the point of the game if they were still able to drive and technically reach the finish without the items. So we wanted to enforce that they can not continue the level and reach the finish without the items on the car.
+
+
 Audio used:
 https://opengameart.org/content/super-santa-claus - christmas themed music for level 2
 https://opengameart.org/content/technomania101-2000s-europop-electronic-dance-music - unused

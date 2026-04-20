@@ -11882,7 +11882,7 @@ GameObject:
   - component: {fileID: 167769847}
   - component: {fileID: 167769846}
   m_Layer: 0
-  m_Name: Assets
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18114,7 +18114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &508055999
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38692,7 +38692,9 @@ MonoBehaviour:
     Last Checkpoint
     - R
 
-    Restart Level - Delete'
+    Restart Level - Delete
+
+    Pause/Back - ESC'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -20987,6 +20987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: X Bot@Angry (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a043d6571521eb24f9008f842c7d5512, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3853268898807207900, guid: a043d6571521eb24f9008f842c7d5512, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -70378,7 +70382,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828577015}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 7e0043553097dc34e867f52b292bb164, type: 3}
   m_Controller: {fileID: 9100000, guid: d533e40e869d5024fb64f52822d19e98, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

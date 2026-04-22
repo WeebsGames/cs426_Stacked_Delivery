@@ -80,7 +80,7 @@ public class CarControl : MonoBehaviour
                     sideFric = wheel.WheelCollider.sidewaysFriction;
                     if (handbraking)
                     {
-                        sideFric.stiffness = 0.1f;
+                        sideFric.stiffness = 0.4f;
                     } else
                     {
                         sideFric.stiffness = 1f;

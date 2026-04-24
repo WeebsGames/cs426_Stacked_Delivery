@@ -51,5 +51,6 @@ public class Garage : MonoBehaviour
         {
             PlayerPrefs.SetString("Car", "AE86");
         }
+        updateCar();
     }
 }

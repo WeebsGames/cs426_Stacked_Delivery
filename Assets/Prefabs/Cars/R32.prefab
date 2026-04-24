@@ -2400,11 +2400,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3bfbc38592b0d4b85a64778a07344b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarControl
-  motorTorque: 4000
+  motorTorque: 2500
   brakeTorque: 4000
-  maxSpeed: 20
+  maxSpeed: 30
   steeringRange: 60
-  steeringRangeAtMaxSpeed: 40
+  steeringRangeAtMaxSpeed: 50
   centreOfGravityOffset: -1
   crashThreshold: 10
   crashSource: {fileID: 9028971401821022053, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}

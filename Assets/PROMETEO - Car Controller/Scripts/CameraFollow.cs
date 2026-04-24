@@ -24,7 +24,17 @@ public class CameraFollow : MonoBehaviour {
 	Vector3 initialCarPosition;
 	Vector3 absoluteInitCameraPosition;
 
+	public void FindCar()
+	{
+		Start();
+	}
+
 	void Start(){
+		if(carTransform == null)
+		{
+			carTransform = GameObject.FindWithTag("Player").transform;
+			// print("tried to find car");
+		}
 		initialCameraPosition = gameObject.transform.position;
 		initialCarPosition = carTransform.position;
 		absoluteInitCameraPosition = initialCameraPosition - initialCarPosition;

@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Object trueno;
     public Transform startPos;
     public CameraFollow cameraFollow;
+    public SpeedometerUI speedometerUI;
+    public BystanderAnimator bystanderAnimator;
 
     Object newCar;
 
@@ -27,5 +29,7 @@ public class GameManager : MonoBehaviour
         }
 
         cameraFollow.FindCar();
+        speedometerUI.FindCar();
+        bystanderAnimator.FindCar();
     }
 }

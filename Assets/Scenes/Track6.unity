@@ -1202,6 +1202,10 @@ PrefabInstance:
       propertyPath: itemPhysics
       value: 
       objectReference: {fileID: 754780975}
+    - target: {fileID: 8836083808908890979, guid: 580eacbf957ae864b88b943e14f73277, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1131660236}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28193,7 +28197,7 @@ MonoBehaviour:
   autoSetControlPoints: 0
   points:
   - {x: 0.000021904707, y: 0.28975296, z: 0.000005722046}
-  - {x: 0.0000218451, y: 0.28975296, z: 1.0000355}
+  - {x: 0.0000218451, y: 0.28975296, z: 1.0000404}
   - {x: 0.0000035464764, y: -0.25758743, z: 9.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 10.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 25.46409}
@@ -28573,7 +28577,7 @@ PrefabInstance:
       objectReference: {fileID: 1072304451}
     - target: {fileID: 3706397020275171809, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_VersionIndex
-      value: 8301
+      value: 8310
       objectReference: {fileID: 0}
     - target: {fileID: 4125013911504910556, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_Mesh
@@ -28615,6 +28619,10 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1131660236}
+    - target: {fileID: 6702379753283846517, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: driftPointsText
+      value: 
+      objectReference: {fileID: 937917331}
     - target: {fileID: 7353640015364892550, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: startPos
       value: 
@@ -28651,13 +28659,17 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1131660236}
+    - target: {fileID: 7945508267013137039, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: driftPointsText
+      value: 
+      objectReference: {fileID: 937917331}
     - target: {fileID: 8010784539568871822, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 40483857}
     - target: {fileID: 8010784539568871822, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_VersionIndex
-      value: 830
+      value: 839
       objectReference: {fileID: 0}
     - target: {fileID: 8866126004401761372, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_IsActive
@@ -30384,6 +30396,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 529166e4713e04e9391a706941ddf2df, type: 3}
+--- !u!114 &937917331 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 811900411344272886, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+  m_PrefabInstance: {fileID: 215235784810627309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &940071239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40335,6 +40358,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 646005454982789099, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 703620300851681715, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: carRigidbody
       value: 
@@ -40359,6 +40386,18 @@ PrefabInstance:
       propertyPath: itemPhysics
       value: 
       objectReference: {fileID: 754780975}
+    - target: {fileID: 2207859559283085207, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207859559283085207, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207859559283085207, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 2356192334561329754, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -40367,13 +40406,37 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2758933319541401235, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3482223553815952987, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3755165150870808641, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: level
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4354261372540441100, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4637719866193835357, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085770281590289723, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085770281590289723, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085770281590289723, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5905843093608628975, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: level
@@ -40403,6 +40466,22 @@ PrefabInstance:
       propertyPath: 'muteAudio.Array.data[4]'
       value: 
       objectReference: {fileID: 493104494}
+    - target: {fileID: 7989184062133862223, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989184062133862223, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989184062133862223, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014272590040772663, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8061625383899381994, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -40483,6 +40562,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8395503588595857517, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422349680271645709, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1131660236}
     - target: {fileID: 8422349680271645709, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: others.Array.size
       value: 0

@@ -50,4 +50,9 @@ public class LevelTimer : MonoBehaviour
     {
         isRunning = false;
     }
+
+    public float GetTimeRemaining()
+    {
+        return timeRemaining;
+    }
 }

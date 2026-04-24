@@ -8,7 +8,14 @@ using System.Collections.Generic;
 public class LevelEnd : MonoBehaviour
 {
     public GameObject panel;
+    public ScoreManager scoreManager;
+
+    public TMP_Text driftPointsText;
+    public TMP_Text timePointsText;
+    public TMP_Text itemPointsText;
+    public TMP_Text totalPointsText;
     public TMP_Text titleText;
+
     public GameObject nextLevelButton;
     public List<GameObject> others;
     public List<AudioSource> muteAudio;
@@ -20,6 +27,17 @@ public class LevelEnd : MonoBehaviour
         titleText.text = "Level Complete!";
         titleText.color = Color.green;
         nextLevelButton.SetActive(true);
+
+        driftPointsText.gameObject.SetActive(true);
+        timePointsText.gameObject.SetActive(true);
+        itemPointsText.gameObject.SetActive(true);
+        totalPointsText.gameObject.SetActive(true);
+
+        driftPointsText.text = "Drift bonus points: " + Mathf.RoundToInt(scoreManager.driftPoints);
+        timePointsText.text = "Time bonus points: " + Mathf.RoundToInt(scoreManager.timeBonus);
+        itemPointsText.text = "Items bonus points: " + Mathf.RoundToInt(scoreManager.cargoBonus);
+        totalPointsText.text = "Total points: " + Mathf.RoundToInt(scoreManager.GetTotal());
+
         ShowPanel();
     }
 

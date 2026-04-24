@@ -166,7 +166,7 @@ public class CarControl : MonoBehaviour
             else
             {
                 // Apply brakes when reversing direction
-                if (wheel.motorized)
+                if (wheel.motorized && !wheel.steerable)
                 {
                     wheel.WheelCollider.motorTorque = 0f;
                     wheel.WheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;

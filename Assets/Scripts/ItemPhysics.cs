@@ -24,7 +24,7 @@ public class ItemPhysics : MonoBehaviour
     public float maxTiltAngle = 50f;
 
     [Header("Falling Items settings")]
-    public System.Collections.Generic.List<GameObject> itemBoxes;
+    public GameObject[] itemBoxes;
     public float fallForce = 5f;
 
     [Header("Collision settings")]
@@ -41,6 +41,7 @@ public class ItemPhysics : MonoBehaviour
     private Rigidbody carRigidbody;
     private bool itemsFallen = false;
 
+
     void Start()
     {
         carRigidbody = GetComponent<Rigidbody>();
@@ -53,6 +54,16 @@ public class ItemPhysics : MonoBehaviour
         {
             Debug.Log("rigidbody on the vehicle");
         }
+
+        itemStack = GameObject.FindWithTag("itemStack").transform;
+
+        itemStack.position = GameObject.Find("ItemStackPivot").transform.position;
+        itemStack.rotation = GameObject.Find("ItemStackPivot").transform.rotation;
+
+        levelEnd = GameObject.FindWithTag("Finish").GetComponent<LevelEnd>();
+        levelTimer = GameObject.FindWithTag("Timer").GetComponent<LevelTimer>();
+
+        itemBoxes = GameObject.FindGameObjectsWithTag("Boxes");
     }
 
     void FixedUpdate()

@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class Garage : MonoBehaviour
 {
+    public Object skyline;
+    public Object trueno;
+    public Transform ae86pos;
+    public Transform r32pos;
+
+    Object newCar;
 
     public void R32()
     {
@@ -18,7 +24,25 @@ public class Garage : MonoBehaviour
 
     public void updateCar()
     {
+        GameObject target = GameObject.FindWithTag("Player");
+        string loadCar = PlayerPrefs.GetString("Car");
         
+        if(target != null)
+        {
+            Destroy(target);
+        }
+
+        switch (loadCar)
+        {
+            case "AE86":
+                newCar = Instantiate(trueno, ae86pos.position, ae86pos.rotation);
+                newCar.GetComponent<CarControl>().enabled = false;
+                break;
+            case "R32":
+                newCar = Instantiate(skyline, r32pos.position, ae86pos.rotation);
+                newCar.GetComponent<CarControl>().enabled = false;
+                break;
+        }
     }
 
     void Start()

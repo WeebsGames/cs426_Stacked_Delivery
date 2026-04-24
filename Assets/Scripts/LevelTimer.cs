@@ -50,4 +50,10 @@ public class LevelTimer : MonoBehaviour
     {
         isRunning = false;
     }
+
+    //starts timer
+    public void StartTimer()
+    {
+        isRunning = true;
+    }
 }

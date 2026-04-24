@@ -1131,7 +1131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1635814733621709658}
   - component: {fileID: 6807259526026044060}
-  - component: {fileID: 8949239190053061863}
   - component: {fileID: 3625052024995213584}
   m_Layer: 0
   m_Name: Tire Source (2)
@@ -1252,20 +1251,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8949239190053061863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054262707626668753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a893aabf58c555439f29f7ee5775f8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  source: {fileID: 0}
-  rb: {fileID: 567201691677643633}
 --- !u!114 &3625052024995213584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,7 +2490,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1957632189394412176}
   - component: {fileID: 7511420083112800017}
-  - component: {fileID: 8649774026331089877}
   - component: {fileID: 1411034859128613731}
   m_Layer: 0
   m_Name: Tire Source (1)
@@ -2626,20 +2610,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8649774026331089877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6841237929270266641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a893aabf58c555439f29f7ee5775f8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  source: {fileID: 0}
-  rb: {fileID: 567201691677643633}
 --- !u!114 &1411034859128613731
 MonoBehaviour:
   m_ObjectHideFlags: 0

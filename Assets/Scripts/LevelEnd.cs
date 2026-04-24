@@ -12,7 +12,7 @@ public class LevelEnd : MonoBehaviour
     public GameObject nextLevelButton;
     public List<GameObject> others;
     public List<AudioSource> muteAudio;
-    public string nextLevelScene;
+    public int nextLevel;
 
     // Show the panel with a "Level Complete!" message when the player wins.
     public void Win()
@@ -20,6 +20,7 @@ public class LevelEnd : MonoBehaviour
         titleText.text = "Level Complete!";
         titleText.color = Color.green;
         nextLevelButton.SetActive(true);
+        PlayerPrefs.SetInt("Level" + nextLevel, 1);
         ShowPanel();
     }
 
@@ -78,6 +79,6 @@ public class LevelEnd : MonoBehaviour
     public void NextLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(nextLevelScene);
+        SceneManager.LoadScene("track" + nextLevel);
     }
 }

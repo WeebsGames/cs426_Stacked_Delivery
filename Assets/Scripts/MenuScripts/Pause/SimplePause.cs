@@ -12,6 +12,7 @@ public class SimplePause : MonoBehaviour
     public List<GameObject> others; 
     public GameObject pause;
     public List<AudioSource> muteAudio;
+    public LevelTimer levelTimer;
 
     bool paused = false;
     
@@ -47,6 +48,7 @@ public class SimplePause : MonoBehaviour
         if (paused)
         {
             pause.SetActive(paused);
+            levelTimer.StopTimer();
             foreach (AudioSource audio in muteAudio)
             {
                 audio.Pause();
@@ -60,6 +62,7 @@ public class SimplePause : MonoBehaviour
             return;
         }
         pause.SetActive(paused);
+        levelTimer.StartTimer();
         foreach (AudioSource audio in muteAudio)
         {
             audio.mute = paused;

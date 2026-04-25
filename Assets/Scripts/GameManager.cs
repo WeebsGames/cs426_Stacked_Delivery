@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public CameraFollow cameraFollow;
     public SpeedometerUI speedometerUI;
     public BystanderAnimator bystanderAnimator;
+    public StabilityMeterUI stabilityMeterUI;
 
     Object newCar;
 
@@ -28,8 +29,22 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        cameraFollow.FindCar();
-        speedometerUI.FindCar();
-        bystanderAnimator.FindCar();
+        if(cameraFollow != null)
+        {
+            cameraFollow.FindCar();
+        }
+        if(speedometerUI != null)
+        {
+            speedometerUI.FindCar();
+        }
+        if(bystanderAnimator != null)
+        {
+            bystanderAnimator.FindCar();
+        }
+        if(stabilityMeterUI != null)
+        {
+            stabilityMeterUI.FindCar();
+        }
+        
     }
 }

@@ -31,6 +31,13 @@ public class StabilityMeterUI : MonoBehaviour
     public AudioSource music;
     public AudioClip fail;
 
+    public void FindCar()
+    {
+        itemPhysics = GameObject.FindWithTag("Player").GetComponent<ItemPhysics>();
+        source = GameObject.FindWithTag("Warn").GetComponent<AudioSource>();
+        print(itemPhysics.name);
+    }
+
     void Update()
     {
         if (itemPhysics == null || fillImage == null) return;

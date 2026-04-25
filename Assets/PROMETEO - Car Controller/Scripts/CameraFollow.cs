@@ -33,7 +33,7 @@ public class CameraFollow : MonoBehaviour {
 		if(carTransform == null)
 		{
 			carTransform = GameObject.FindWithTag("Player").transform;
-			// print("tried to find car");
+			print("tried to find car");
 		}
 		initialCameraPosition = gameObject.transform.position;
 		initialCarPosition = carTransform.position;

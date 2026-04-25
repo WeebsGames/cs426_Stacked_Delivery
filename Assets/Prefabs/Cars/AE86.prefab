@@ -47,7 +47,6 @@ Transform:
   - {fileID: 1957632189394412176}
   - {fileID: 1635814733621709658}
   - {fileID: 3007963334536070248}
-  - {fileID: 2170500129726944330}
   - {fileID: 1579182741116311764}
   - {fileID: 5905334962066152452}
   m_Father: {fileID: 0}
@@ -120,6 +119,7 @@ MonoBehaviour:
   angularVelocityMultiplier: 5
   smoothDrivingThreshold: 3.5
   itemStack: {fileID: 0}
+  boxParent: {fileID: 0}
   maxTiltAngle: 15
   itemBoxes:
   - {fileID: 0}
@@ -1153,37 +1153,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &1613008348892243738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2170500129726944330}
-  m_Layer: 0
-  m_Name: ItemStackPivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2170500129726944330
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613008348892243738}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.37, z: -1.67}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9218217658314702147}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2054262707626668753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1461,7 @@ GameObject:
   - component: {fileID: 7369963021030592590}
   m_Layer: 0
   m_Name: WarnSource
-  m_TagString: Untagged
+  m_TagString: Warn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1524,7 +1493,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4929c8fc22cc9b343aad2f1de5f6689f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -3089,7 +3058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7849136692853187829}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9999875, z: -0, w: 0.0050108177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2, y: 5.24, z: -1.8}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0

@@ -20,6 +20,7 @@ public class ItemPhysics : MonoBehaviour
 
     [Header("Visual Stack")]
     public Transform itemStack;
+    public GameObject boxParent;
     [Range(0f, 100f)]
     public float maxTiltAngle = 50f;
 
@@ -55,15 +56,21 @@ public class ItemPhysics : MonoBehaviour
             Debug.Log("rigidbody on the vehicle");
         }
 
-        itemStack = GameObject.FindWithTag("itemStack").transform;
+        itemStack = GameObject.Find("ItemStackPivot").transform;
 
-        itemStack.position = GameObject.Find("ItemStackPivot").transform.position;
-        itemStack.rotation = GameObject.Find("ItemStackPivot").transform.rotation;
+        boxParent = GameObject.FindWithTag("itemStack");
+        boxParent.transform.SetParent(GameObject.Find("ItemStackPivot").transform);
+        boxParent.transform.position = GameObject.Find("ItemStackPivot").transform.position + new Vector3(-1.33f,1.48f,0.37f);
+        
+
+        
+        // itemStack.rotation = GameObject.Find("ItemStackPivot").transform.rotation;
 
         levelEnd = GameObject.FindWithTag("Finish").GetComponent<LevelEnd>();
         levelTimer = GameObject.FindWithTag("Timer").GetComponent<LevelTimer>();
 
         itemBoxes = GameObject.FindGameObjectsWithTag("Boxes");
+        // print(itemBoxes);
     }
 
     void FixedUpdate()

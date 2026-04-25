@@ -5996,6 +5996,14 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6702379753283846517, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 966954654}
+    - target: {fileID: 6702379753283846517, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: driftPointsText
+      value: 
+      objectReference: {fileID: 1589990884}
     - target: {fileID: 7353640015364892550, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: startPos
       value: 
@@ -6032,6 +6040,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 125906877}
+    - target: {fileID: 7945508267013137039, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 966954654}
+    - target: {fileID: 7945508267013137039, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+      propertyPath: driftPointsText
+      value: 
+      objectReference: {fileID: 1589990884}
     - target: {fileID: 8010784539568871822, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -7314,6 +7330,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7136428667106119461, guid: 428a63a901d284948a9919ccce8ba055, type: 3}
   m_PrefabInstance: {fileID: 944351414}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &966954654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6034489310759716314, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+  m_PrefabInstance: {fileID: 1030384028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae7d5a45bfe2ef4f8d38a342568a0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
 --- !u!1001 &1010070414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9013,6 +9040,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   road: {fileID: 0}
   isStart: 0
+--- !u!114 &1589990884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 811900411344272886, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+  m_PrefabInstance: {fileID: 1030384028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1617355950
 GameObject:
   m_ObjectHideFlags: 0
@@ -10449,6 +10487,10 @@ PrefabInstance:
       propertyPath: itemPhysics
       value: 
       objectReference: {fileID: 325346464}
+    - target: {fileID: 8836083808908890979, guid: 580eacbf957ae864b88b943e14f73277, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 966954654}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

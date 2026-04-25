@@ -2558,7 +2558,7 @@ GameObject:
   - component: {fileID: 6024858010206668274}
   m_Layer: 0
   m_Name: TimeManager
-  m_TagString: Untagged
+  m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3349,7 +3349,7 @@ GameObject:
   - component: {fileID: 8422349680271645709}
   m_Layer: 0
   m_Name: LevelEndManager
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

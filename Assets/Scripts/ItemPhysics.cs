@@ -64,7 +64,7 @@ public class ItemPhysics : MonoBehaviour
         
         // itemStack.rotation = GameObject.Find("ItemStackPivot").transform.rotation;
 
-        levelEnd = GameObject.FindWithTag("Finish").GetComponent<LevelEnd>();
+        levelEnd = FindAnyObjectByType<LevelEnd>();
         levelTimer = GameObject.FindWithTag("Timer").GetComponent<LevelTimer>();
 
         itemBoxes = GameObject.FindGameObjectsWithTag("Boxes");
@@ -211,6 +211,7 @@ public class ItemPhysics : MonoBehaviour
     //
     void MakeItemsFall()
     {
+        //Debug.Log("MakeItemsFall called");
         itemsFallen = true;
         // Debug.LogError("Falling items now");
 
@@ -242,6 +243,9 @@ public class ItemPhysics : MonoBehaviour
     // stop timer.
     void TriggerLoseCargo()
     {
+        // Debug.Log("TriggerLoseCargo called");
+        // Debug.Log("levelEnd: " + levelEnd);
+        // Debug.Log("levelTimer: " + levelTimer);
         if (levelTimer != null) levelTimer.StopTimer();
         if (levelEnd != null)
         {

@@ -9,6 +9,12 @@ public class finishscirpt : MonoBehaviour
     public LevelEnd levelEnd;
     public ItemPhysics itemPhysics;
 
+    void Start()
+    {
+        levelEnd = FindAnyObjectByType<LevelEnd>();
+        levelTimer = FindAnyObjectByType<LevelTimer>();
+    }
+
     public void FindCar()
     {
         itemPhysics = GameObject.FindWithTag("Player").GetComponent<ItemPhysics>();
@@ -16,7 +22,7 @@ public class finishscirpt : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.transform.root.tag == "Player")
         {
             print("finish");
             finishSound.Stop();

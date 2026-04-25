@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public SpeedometerUI speedometerUI;
     public BystanderAnimator bystanderAnimator;
     public StabilityMeterUI stabilityMeterUI;
+    public SimplePause simplePause;
+    public finishscirpt finishscirpt;
 
     Object newCar;
 
@@ -44,6 +46,14 @@ public class GameManager : MonoBehaviour
         if(stabilityMeterUI != null)
         {
             stabilityMeterUI.FindCar();
+        }
+        if(simplePause != null)
+        {
+            simplePause.FindCar();
+        }
+        if (finishscirpt != null)
+        {
+            finishscirpt.FindCar();
         }
         
     }

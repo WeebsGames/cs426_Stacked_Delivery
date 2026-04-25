@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class SimplePause : MonoBehaviour
 {
@@ -15,6 +16,15 @@ public class SimplePause : MonoBehaviour
     public LevelTimer levelTimer;
 
     bool paused = false;
+    
+    public void FindCar()
+    {
+        GameObject[] muteTag = GameObject.FindGameObjectsWithTag("MuteNoise");
+        foreach (GameObject tagged in muteTag)
+        {
+            muteAudio.Add(tagged.GetComponent<AudioSource>());
+        }
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -2783,6 +2783,11 @@ MonoBehaviour:
   skyline: {fileID: 5440082307232616491, guid: 8942e5930ed7cb943bff2984f6ae4635, type: 3}
   trueno: {fileID: 74184229363486579, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
   startPos: {fileID: 0}
+  cameraFollow: {fileID: 0}
+  speedometerUI: {fileID: 703620300851681715}
+  bystanderAnimator: {fileID: 0}
+  stabilityMeterUI: {fileID: 2094009112928751513}
+  simplePause: {fileID: 5905843093608628975}
 --- !u!1 &7474959410586178313
 GameObject:
   m_ObjectHideFlags: 0

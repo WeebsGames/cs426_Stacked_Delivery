@@ -14,6 +14,19 @@ public class LevelEnd : MonoBehaviour
     public List<AudioSource> muteAudio;
     public int nextLevel;
 
+    
+    public void FindCar()
+    {
+        AudioSource[] audios = GameObject.FindWithTag("Player").GetComponentsInChildren<AudioSource>();
+        foreach (AudioSource audio in audios)
+        {
+            if(audio.tag == "MuteNoise")
+            {
+                muteAudio.Add(audio);
+            }
+        }
+    }
+
     // Show the panel with a "Level Complete!" message when the player wins.
     public void Win()
     {

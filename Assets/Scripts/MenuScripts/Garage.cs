@@ -36,12 +36,20 @@ public class Garage : MonoBehaviour
         {
             case "AE86":
                 newCar = Instantiate(trueno, ae86pos.position, ae86pos.rotation);
-                newCar.GetComponent<CarControl>().enabled = false;
                 break;
             case "R32":
                 newCar = Instantiate(skyline, r32pos.position, ae86pos.rotation);
-                newCar.GetComponent<CarControl>().enabled = false;
                 break;
+        }
+
+        newCar.GetComponent<CarControl>().enabled = false;
+        AudioSource[] mutes = newCar.GetComponentsInChildren<AudioSource>();
+        foreach (AudioSource sound in mutes)
+        {
+            if(sound.name != "Engine Source")
+            {
+                sound.mute = true;
+            }
         }
     }
 

@@ -60,9 +60,7 @@ public class ItemPhysics : MonoBehaviour
 
         boxParent = GameObject.FindWithTag("itemStack");
         boxParent.transform.SetParent(GameObject.Find("ItemStackPivot").transform);
-        boxParent.transform.position = GameObject.Find("ItemStackPivot").transform.position + new Vector3(-1.33f,1.48f,0.37f);
-        
-
+        boxParent.transform.position = GameObject.Find("ItemStackPivot").transform.position + new Vector3(-1.491f + 1.4f, 1.521f, 0.377f - -1.351829f);
         
         // itemStack.rotation = GameObject.Find("ItemStackPivot").transform.rotation;
 
@@ -70,6 +68,8 @@ public class ItemPhysics : MonoBehaviour
         levelTimer = GameObject.FindWithTag("Timer").GetComponent<LevelTimer>();
 
         itemBoxes = GameObject.FindGameObjectsWithTag("Boxes");
+
+
         // print(itemBoxes);
     }
 
@@ -243,7 +243,11 @@ public class ItemPhysics : MonoBehaviour
     void TriggerLoseCargo()
     {
         if (levelTimer != null) levelTimer.StopTimer();
-        if (levelEnd != null) levelEnd.LoseCargo();
+        if (levelEnd != null)
+        {
+            print("triggered levelEnd.LoseCargo()");
+            levelEnd.LoseCargo();
+        } 
     }
 
     //

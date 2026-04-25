@@ -16,6 +16,7 @@ TagManager:
   - Timer
   - Boxes
   - Warn
+  - MuteNoise
   layers:
   - Default
   - TransparentFX

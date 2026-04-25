@@ -9,6 +9,11 @@ public class finishscirpt : MonoBehaviour
     public LevelEnd levelEnd;
     public ItemPhysics itemPhysics;
 
+    public void FindCar()
+    {
+        itemPhysics = GameObject.FindWithTag("Player").GetComponent<ItemPhysics>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

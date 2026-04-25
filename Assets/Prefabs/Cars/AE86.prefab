@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 3625052024995213584}
   m_Layer: 0
   m_Name: Tire Source (2)
-  m_TagString: Untagged
+  m_TagString: MuteNoise
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1493,7 +1493,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4929c8fc22cc9b343aad2f1de5f6689f, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -2001,7 +2001,7 @@ GameObject:
   - component: {fileID: 2906875904654496698}
   m_Layer: 0
   m_Name: Engine Source
-  m_TagString: Untagged
+  m_TagString: MuteNoise
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2654,7 +2654,7 @@ GameObject:
   - component: {fileID: 1411034859128613731}
   m_Layer: 0
   m_Name: Tire Source (1)
-  m_TagString: Untagged
+  m_TagString: MuteNoise
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -27046,7 +27046,7 @@ MonoBehaviour:
   autoSetControlPoints: 0
   points:
   - {x: 0.000021904707, y: 0.28975296, z: 0.000005722046}
-  - {x: 0.0000218451, y: 0.28975296, z: 1.0000349}
+  - {x: 0.0000218451, y: 0.28975296, z: 1.0000389}
   - {x: 0.0000035464764, y: -0.25758743, z: 9.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 10.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 25.46409}
@@ -30719,6 +30719,10 @@ PrefabInstance:
     - target: {fileID: 642287924342879162, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_Name
       value: Prometheus
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045236289039661194, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

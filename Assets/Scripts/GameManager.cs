@@ -47,10 +47,6 @@ public class GameManager : MonoBehaviour
         {
             stabilityMeterUI.FindCar();
         }
-        if(simplePause != null)
-        {
-            simplePause.FindCar();
-        }
         if (finishscirpt != null)
         {
             finishscirpt.FindCar();

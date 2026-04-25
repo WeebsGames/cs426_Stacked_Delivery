@@ -3,29 +3,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;
 
 public class SimplePause : MonoBehaviour
 {
-    
+
     public int level;
     public TMP_Text text;
-    public List<GameObject> others; 
+    public List<GameObject> others;
     public GameObject pause;
-    public List<AudioSource> muteAudio;
     public LevelTimer levelTimer;
 
     bool paused = false;
-    
-    public void FindCar()
-    {
-        GameObject[] muteTag = GameObject.FindGameObjectsWithTag("MuteNoise");
-        foreach (GameObject tagged in muteTag)
-        {
-            muteAudio.Add(tagged.GetComponent<AudioSource>());
-        }
-    }
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,7 +33,7 @@ public class SimplePause : MonoBehaviour
         {
             Restart();
         }
-        
+
     }
 
     public void Quit()
@@ -54,15 +44,23 @@ public class SimplePause : MonoBehaviour
 
     public void PauseToggle()
     {
+        ItemPhysics itemPhysics = FindAnyObjectByType<ItemPhysics>();
+        if (itemPhysics != null && itemPhysics.GetItemsFallen()) return;
+
         paused = !paused;
+        GameObject car = GameObject.FindWithTag("Player");
+
         if (paused)
         {
-            pause.SetActive(paused);
+            pause.SetActive(true);
             levelTimer.StopTimer();
-            foreach (AudioSource audio in muteAudio)
+
+            AudioSource[] carAudio = car.GetComponentsInChildren<AudioSource>();
+            foreach (AudioSource audio in carAudio)
             {
+                Debug.Log("car audio being muted: " + audio.name);
                 audio.Pause();
-                audio.mute = paused;
+                audio.mute = true;
             }
             foreach (GameObject other in others)
             {
@@ -71,17 +69,25 @@ public class SimplePause : MonoBehaviour
             Time.timeScale = 0.0f;
             return;
         }
-        pause.SetActive(paused);
+        pause.SetActive(false);
         levelTimer.StartTimer();
-        foreach (AudioSource audio in muteAudio)
+
+        if (car != null)
         {
-            audio.mute = paused;
-            audio.UnPause();
-        }
-        foreach (GameObject other in others)
+            AudioSource[] carAudio = car.GetComponentsInChildren<AudioSource>();
+            foreach (AudioSource audio in carAudio)
             {
-                other.SetActive(true);
+                Debug.Log("car audio being unmuted: " + audio.name);
+                audio.mute = false;
+                audio.UnPause();
             }
+        }
+
+        foreach (GameObject other in others)
+        {
+            other.SetActive(true);
+        }
+
         Time.timeScale = 1.0f;
     }
 

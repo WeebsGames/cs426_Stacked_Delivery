@@ -17,7 +17,13 @@ public class TireScreech : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(wheel.GetGroundHit(out hit))
+        if (Time.timeScale == 0f)
+        {
+            source.Pause();
+            return;
+        }
+
+        if (wheel.GetGroundHit(out hit))
         {
             // print(hit.sidewaysSlip);
             if(math.abs(hit.sidewaysSlip) > 0.2)

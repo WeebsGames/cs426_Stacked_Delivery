@@ -1975,12 +1975,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5905843093608628975, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: muteAudio.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5905843093608628975, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: 'muteAudio.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2045049806}
     - target: {fileID: 5905843093608628975, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: 'muteAudio.Array.data[1]'
       value: 
@@ -2095,7 +2095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8422349680271645709, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: muteAudio.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8422349680271645709, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: 'muteAudio.Array.data[0]'

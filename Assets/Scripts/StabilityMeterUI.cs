@@ -85,9 +85,16 @@ public class StabilityMeterUI : MonoBehaviour
         if (fallen)
         {
             source.Stop();
-            source.clip = fail;
-            source.Play();
+            //source.clip = fail;
+            //source.Play();
             music.Stop();
+            music.clip = fail;
+            music.Play();
+            Debug.Log("playing fail clip" + music.clip.name);
+            //source.gameObject.SetActive(true);
+            //source.enabled = true;
+            //source.Play();
+
             unstableText.gameObject.SetActive(false);
             if (boxesStableText != null)
                 boxesStableText.gameObject.SetActive(false);

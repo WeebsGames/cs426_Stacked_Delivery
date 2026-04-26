@@ -769,9 +769,6 @@ MonoBehaviour:
   others:
   - {fileID: 3657105201931637316}
   pause: {fileID: 5913600268546547458}
-  muteAudio:
-  - {fileID: 0}
-  - {fileID: 0}
   levelTimer: {fileID: 6024858010206668274}
 --- !u!1 &1816814140139001691
 GameObject:
@@ -1309,7 +1306,6 @@ MonoBehaviour:
   others:
   - {fileID: 3657105201931637316}
   pause: {fileID: 0}
-  muteAudio: []
   levelTimer: {fileID: 0}
 --- !u!1 &3520827048234633325
 GameObject:
@@ -2782,6 +2778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   skyline: {fileID: 5440082307232616491, guid: 8942e5930ed7cb943bff2984f6ae4635, type: 3}
   trueno: {fileID: 74184229363486579, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+  civic: {fileID: 3461655438034546046, guid: 6f555c935602c504b90f7f4ca1b77355, type: 3}
   startPos: {fileID: 0}
   cameraFollow: {fileID: 0}
   speedometerUI: {fileID: 703620300851681715}
@@ -3385,7 +3382,6 @@ MonoBehaviour:
   titleText: {fileID: 1346000806725793353}
   nextLevelButton: {fileID: 4637719866193835357}
   others: []
-  muteAudio: []
   nextLevel: 0
 --- !u!1 &7845525794918810202
 GameObject:

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     
     public Object skyline;
     public Object trueno;
+    public Object civic;
     public Transform startPos;
     public CameraFollow cameraFollow;
     public SpeedometerUI speedometerUI;
@@ -28,6 +29,9 @@ public class GameManager : MonoBehaviour
                 break;
             case "R32":
                 newCar = Instantiate(skyline, startPos.position, startPos.rotation);
+                break;
+            case "EG6":
+                newCar = Instantiate(civic, startPos.position, startPos.rotation);
                 break;
         }
 

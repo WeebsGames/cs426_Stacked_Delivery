@@ -5,8 +5,10 @@ public class Garage : MonoBehaviour
 {
     public Object skyline;
     public Object trueno;
+    public Object civic;
     public Transform ae86pos;
     public Transform r32pos;
+    public Transform eg6pos;
 
     Object newCar;
 
@@ -19,6 +21,12 @@ public class Garage : MonoBehaviour
     public void AE86()
     {
         PlayerPrefs.SetString("Car", "AE86");
+        updateCar();
+    }
+
+    public void EG6()
+    {
+        PlayerPrefs.SetString("Car", "EG6");
         updateCar();
     }
 
@@ -40,6 +48,10 @@ public class Garage : MonoBehaviour
             case "R32":
                 newCar = Instantiate(skyline, r32pos.position, ae86pos.rotation);
                 break;
+            case "EG6":
+            print("attempting to spawn EG6");
+                newCar = Instantiate(civic, eg6pos.position, eg6pos.rotation);
+                break;
         }
 
         newCar.GetComponent<CarControl>().enabled = false;
@@ -56,11 +68,11 @@ public class Garage : MonoBehaviour
 
     void Start()
     {
-        print("start called");
+        // print("start called");
         if(PlayerPrefs.GetString("Car") == "")
         {
             PlayerPrefs.SetString("Car", "AE86");
-            print("set car to AE86");
+            // print("set car to AE86");
         }
         updateCar();
     }

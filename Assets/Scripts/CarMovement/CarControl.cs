@@ -78,7 +78,7 @@ public class CarControl : MonoBehaviour
             print("Handbraking: " + handbraking);
             foreach(var wheel in wheels)
             {
-                if (wheel.motorized)
+                if (!wheel.steerable)
                 {
                     sideFric = wheel.WheelCollider.sidewaysFriction;
                     if (handbraking)
@@ -102,7 +102,7 @@ public class CarControl : MonoBehaviour
             print("Handbraking: " + handbraking);
             foreach(var wheel in wheels)
             {
-                if (wheel.motorized)
+                if (!wheel.steerable)
                 {
                     sideFric = wheel.WheelCollider.sidewaysFriction;
                     if (handbraking)
@@ -166,7 +166,7 @@ public class CarControl : MonoBehaviour
             else
             {
                 // Apply brakes when reversing direction
-                if (wheel.motorized && !wheel.steerable)
+                if (wheel.motorized)
                 {
                     wheel.WheelCollider.motorTorque = 0f;
                     wheel.WheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;

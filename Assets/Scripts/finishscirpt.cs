@@ -46,7 +46,7 @@ public class finishscirpt : MonoBehaviour
                     // add points to time and cargo
                     // time bonus points for time remaining on timer
                     // item points bonus for number of items * 100
-                    scoreManager.timeBonus = Mathf.FloorToInt(levelTimer.GetTimeRemaining());
+                    scoreManager.timeBonus = Mathf.FloorToInt(levelTimer.GetTimeRemaining() * 10);
                     scoreManager.cargoBonus = itemPhysics.itemBoxes.Count * 100f;
                     levelEnd.Win();
                 }

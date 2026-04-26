@@ -1024,6 +1024,10 @@ PrefabInstance:
       propertyPath: itemPhysics
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8836083808908890979, guid: 580eacbf957ae864b88b943e14f73277, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1036462066}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27046,7 +27050,7 @@ MonoBehaviour:
   autoSetControlPoints: 0
   points:
   - {x: 0.000021904707, y: 0.28975296, z: 0.000005722046}
-  - {x: 0.0000218451, y: 0.28975296, z: 1.0000389}
+  - {x: 0.0000218451, y: 0.28975296, z: 1.00004}
   - {x: 0.0000035464764, y: -0.25758743, z: 9.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 10.000002}
   - {x: 0.0000035464764, y: -0.25758743, z: 25.46409}
@@ -29615,6 +29619,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1294191428}
   m_LocalEulerAnglesHint: {x: 0, y: 23.2, z: 0}
+--- !u!114 &1036462066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6034489310759716314, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+  m_PrefabInstance: {fileID: 215235784810627309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae7d5a45bfe2ef4f8d38a342568a0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
 --- !u!4 &1040139037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8881504610387854135, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
@@ -30873,7 +30888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37658,6 +37673,18 @@ PrefabInstance:
       propertyPath: carRigidbody
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 983028698497203818, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: startPos
+      value: 
+      objectReference: {fileID: 428318226}
+    - target: {fileID: 983028698497203818, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: cameraFollow
+      value: 
+      objectReference: {fileID: 1940090646}
+    - target: {fileID: 983028698497203818, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
+      propertyPath: finishscirpt
+      value: 
+      objectReference: {fileID: 106176871}
     - target: {fileID: 1730097785721970066, guid: 2046116f69d3877449e6bb53de2d6df7, type: 3}
       propertyPath: m_Name
       value: 'Canvas 2 '

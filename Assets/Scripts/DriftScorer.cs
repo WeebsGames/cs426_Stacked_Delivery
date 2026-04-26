@@ -12,9 +12,13 @@ public class DriftScorer : MonoBehaviour
 
     void Start()
     {
-        if(scoreManager = null)
+        if(scoreManager == null)
         {
             scoreManager = GameObject.FindWithTag("Score").GetComponent<ScoreManager>();
+        }
+        if(driftPointsText == null)
+        {
+            driftPointsText = GameObject.FindWithTag("DriftPoints").GetComponent<TextMeshProUGUI>();
         }
     }
 

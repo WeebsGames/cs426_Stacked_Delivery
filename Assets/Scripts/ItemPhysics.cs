@@ -28,7 +28,7 @@ public class ItemPhysics : MonoBehaviour
     public float maxTiltAngle = 50f;
 
     [Header("Falling Items settings")]
-    public List<GameObject> itemBoxes;
+    public List<GameObject> itemBoxes = new List<GameObject>(3);
     public float fallForce = 5f;
 
     [Header("Collision settings")]
@@ -75,11 +75,13 @@ public class ItemPhysics : MonoBehaviour
         {
             itemBoxes.Add(box);
         }
-
+        print(itemBoxes.Count);
+        itemBoxes.Sort((a, b) => a.transform.GetSiblingIndex().CompareTo(b.transform.GetSiblingIndex()));
 
 
         // print(itemBoxes);
     }
+    
 
     void FixedUpdate()
     {

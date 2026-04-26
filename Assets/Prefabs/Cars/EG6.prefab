@@ -2132,6 +2132,7 @@ GameObject:
   - component: {fileID: 7155522474702191688}
   - component: {fileID: 6010601828617381121}
   - component: {fileID: 1072326593303692850}
+  - component: {fileID: 6899696974955091429}
   m_Layer: 0
   m_Name: Col_BL
   m_TagString: Untagged
@@ -2209,6 +2210,21 @@ MonoBehaviour:
   WheelCollider: {fileID: 0}
   steerable: 0
   motorized: 0
+--- !u!114 &6899696974955091429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5606170561209967443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6030339247df6934c90651f2afb06a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DriftScorer
+  wheel: {fileID: 6010601828617381121}
+  scoreManager: {fileID: 0}
+  driftPointsText: {fileID: 0}
 --- !u!1 &5837178033651491258
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,6 +3984,7 @@ GameObject:
   - component: {fileID: 1730756452757800758}
   - component: {fileID: 965892787720794469}
   - component: {fileID: 5224391213490506673}
+  - component: {fileID: 4418547108399027307}
   m_Layer: 0
   m_Name: Col_BR
   m_TagString: Untagged
@@ -4045,6 +4062,21 @@ MonoBehaviour:
   WheelCollider: {fileID: 0}
   steerable: 0
   motorized: 0
+--- !u!114 &4418547108399027307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175006144972731012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6030339247df6934c90651f2afb06a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DriftScorer
+  wheel: {fileID: 965892787720794469}
+  scoreManager: {fileID: 0}
+  driftPointsText: {fileID: 0}
 --- !u!1 &8224038063002860678
 GameObject:
   m_ObjectHideFlags: 0

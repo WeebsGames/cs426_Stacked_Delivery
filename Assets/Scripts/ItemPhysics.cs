@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 //
 // ItemPhysics to simulate stacked items on top of vehicle
@@ -25,7 +28,7 @@ public class ItemPhysics : MonoBehaviour
     public float maxTiltAngle = 50f;
 
     [Header("Falling Items settings")]
-    public GameObject[] itemBoxes;
+    public List<GameObject> itemBoxes;
     public float fallForce = 5f;
 
     [Header("Collision settings")]
@@ -67,7 +70,12 @@ public class ItemPhysics : MonoBehaviour
         levelEnd = FindAnyObjectByType<LevelEnd>();
         levelTimer = GameObject.FindWithTag("Timer").GetComponent<LevelTimer>();
 
-        itemBoxes = GameObject.FindGameObjectsWithTag("Boxes");
+        GameObject[] tempBoxes = GameObject.FindGameObjectsWithTag("Boxes");
+        foreach (GameObject box in tempBoxes)
+        {
+            itemBoxes.Add(box);
+        }
+
 
 
         // print(itemBoxes);

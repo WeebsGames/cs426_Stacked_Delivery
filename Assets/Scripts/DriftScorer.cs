@@ -10,6 +10,14 @@ public class DriftScorer : MonoBehaviour
 
     WheelHit hit;
 
+    void Start()
+    {
+        if(scoreManager = null)
+        {
+            scoreManager = GameObject.FindWithTag("Score").GetComponent<ScoreManager>();
+        }
+    }
+
     void Update()
     {
         if (wheel.GetGroundHit(out hit))

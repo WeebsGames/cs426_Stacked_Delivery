@@ -110,3 +110,6 @@ https://assetstore.unity.com/packages/p/allsky-free-10-sky-skybox-set-146014
 https://assetstore.unity.com/packages/p/road-system-192818
 https://assetstore.unity.com/packages/2d/textures-materials/nature/terrain-textures-free-271990
 https://assetstore.unity.com/packages/p/yughues-free-concrete-materials-12951
+https://sketchfab.com/3d-models/nissan-skyline-r32-gt-r-8810e677eca543a6b840cf67dd064aa4 - Nissan Skyline
+https://sketchfab.com/3d-models/1991-honda-civic-eg6-f81da34570b145deb463fa091604d251 - Honda Civic
+https://www.svgrepo.com/svg/344705/cup-straw - Cup for stability meter

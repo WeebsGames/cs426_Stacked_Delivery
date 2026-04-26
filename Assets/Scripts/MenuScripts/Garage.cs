@@ -49,6 +49,7 @@ public class Garage : MonoBehaviour
             if(sound.name != "Engine Source")
             {
                 sound.mute = true;
+                sound.Stop();
             }
         }
     }

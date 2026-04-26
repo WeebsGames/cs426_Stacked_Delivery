@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 
 public class finishscirpt : MonoBehaviour
 {
@@ -8,10 +8,22 @@ public class finishscirpt : MonoBehaviour
     public LevelTimer levelTimer;
     public LevelEnd levelEnd;
     public ItemPhysics itemPhysics;
+    public ScoreManager scoreManager;
+
+    void Start()
+    {
+        levelEnd = FindAnyObjectByType<LevelEnd>();
+        levelTimer = FindAnyObjectByType<LevelTimer>();
+    }
+
+    public void FindCar()
+    {
+        itemPhysics = GameObject.FindWithTag("Player").GetComponent<ItemPhysics>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.transform.root.tag == "Player")
         {
             print("finish");
             finishSound.Stop();
@@ -31,6 +43,11 @@ public class finishscirpt : MonoBehaviour
                 }
                 else
                 {
+                    // add points to time and cargo
+                    // time bonus points for time remaining on timer
+                    // item points bonus for number of items * 100
+                    scoreManager.timeBonus = Mathf.FloorToInt(levelTimer.GetTimeRemaining() * 10);
+                    scoreManager.cargoBonus = itemPhysics.itemBoxes.Count * 100f;
                     levelEnd.Win();
                 }
             }

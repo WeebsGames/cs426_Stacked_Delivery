@@ -14,6 +14,10 @@ public class LvlOrbScript : MonoBehaviour
     void Start()
     {
         render = GetComponent<Renderer>();
+        if(PlayerPrefs.GetInt("Level"+targetLvl) == 1)
+        {
+            locked = false;
+        }
         CheckMat();
     }
 

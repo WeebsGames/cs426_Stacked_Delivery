@@ -12,6 +12,13 @@ TagManager:
   - StreetLamp
   - LampLens
   - barrier
+  - itemStack
+  - Timer
+  - Boxes
+  - Warn
+  - MuteNoise
+  - Score
+  - DriftPoints
   layers:
   - Default
   - TransparentFX

@@ -31,6 +31,13 @@ public class StabilityMeterUI : MonoBehaviour
     public AudioSource music;
     public AudioClip fail;
 
+    public void FindCar()
+    {
+        itemPhysics = GameObject.FindWithTag("Player").GetComponent<ItemPhysics>();
+        source = GameObject.FindWithTag("Warn").GetComponent<AudioSource>();
+        print(itemPhysics.name);
+    }
+
     void Update()
     {
         if (itemPhysics == null || fillImage == null) return;
@@ -78,9 +85,16 @@ public class StabilityMeterUI : MonoBehaviour
         if (fallen)
         {
             source.Stop();
-            source.clip = fail;
-            source.Play();
+            //source.clip = fail;
+            //source.Play();
             music.Stop();
+            music.clip = fail;
+            music.Play();
+            Debug.Log("playing fail clip" + music.clip.name);
+            //source.gameObject.SetActive(true);
+            //source.enabled = true;
+            //source.Play();
+
             unstableText.gameObject.SetActive(false);
             if (boxesStableText != null)
                 boxesStableText.gameObject.SetActive(false);

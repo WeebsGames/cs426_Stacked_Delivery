@@ -8,11 +8,19 @@ using System.Collections.Generic;
 public class LevelEnd : MonoBehaviour
 {
     public GameObject panel;
+    public ScoreManager scoreManager;
+
+    public TMP_Text driftPointsText;
+    public TMP_Text timePointsText;
+    public TMP_Text itemPointsText;
+    public TMP_Text totalPointsText;
     public TMP_Text titleText;
+
     public GameObject nextLevelButton;
     public List<GameObject> others;
-    public List<AudioSource> muteAudio;
-    public string nextLevelScene;
+    //public List<AudioSource> muteAudio;
+    public int nextLevel;
+
 
     // Show the panel with a "Level Complete!" message when the player wins.
     public void Win()
@@ -20,6 +28,18 @@ public class LevelEnd : MonoBehaviour
         titleText.text = "Level Complete!";
         titleText.color = Color.green;
         nextLevelButton.SetActive(true);
+        PlayerPrefs.SetInt("Level" + nextLevel, 1);
+
+        driftPointsText.gameObject.SetActive(true);
+        timePointsText.gameObject.SetActive(true);
+        itemPointsText.gameObject.SetActive(true);
+        totalPointsText.gameObject.SetActive(true);
+
+        driftPointsText.text = "Drift bonus points: " + Mathf.RoundToInt(scoreManager.driftPoints);
+        timePointsText.text = "Time bonus points: " + Mathf.RoundToInt(scoreManager.timeBonus);
+        itemPointsText.text = "Items bonus points: " + Mathf.RoundToInt(scoreManager.cargoBonus);
+        totalPointsText.text = "Total points: " + Mathf.RoundToInt(scoreManager.GetTotal());
+
         ShowPanel();
     }
 
@@ -44,12 +64,19 @@ public class LevelEnd : MonoBehaviour
     // Pause the game, mute audio, hide HUD, and show the end panel.
     private void ShowPanel()
     {
+        Debug.Log("show panel called");
         panel.SetActive(true);
 
-        foreach (AudioSource audio in muteAudio)
+        GameObject car = GameObject.FindWithTag("Player");
+        if (car != null)
         {
-            audio.Pause();
-            audio.mute = true;
+            AudioSource[] carAudio = car.GetComponentsInChildren<AudioSource>();
+            foreach (AudioSource audio in carAudio)
+            {
+                Debug.Log("car audio being muted: " + audio.name);
+                audio.Pause();
+                audio.mute = true;
+            }
         }
 
         foreach (GameObject other in others)
@@ -63,6 +90,7 @@ public class LevelEnd : MonoBehaviour
     // Reload the current scene.
     public void Restart()
     {
+        //AudioListener.pause = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -78,6 +106,6 @@ public class LevelEnd : MonoBehaviour
     public void NextLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(nextLevelScene);
+        SceneManager.LoadScene("track" + nextLevel);
     }
 }

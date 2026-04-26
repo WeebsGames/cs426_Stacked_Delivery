@@ -11,6 +11,11 @@ public class BystanderAnimator : MonoBehaviour
     //
     // Initializes the animator component.
     //
+    public void FindCar()
+	{
+		player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+	}
+    
     void Start()
     {
         animator = GetComponent<Animator>();

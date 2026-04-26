@@ -15,6 +15,11 @@ public class SpeedometerUI : MonoBehaviour
     public float maxAngle = -40f;
     public float maxSpeed = 20f;
 
+    public void FindCar()
+	{
+		carRigidbody = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
+	}
+
     void Update()
     {
         float speed = carRigidbody.linearVelocity.magnitude;

@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 //
 // ItemPhysics to simulate stacked items on top of vehicle
@@ -20,11 +23,12 @@ public class ItemPhysics : MonoBehaviour
 
     [Header("Visual Stack")]
     public Transform itemStack;
+    public GameObject boxParent;
     [Range(0f, 100f)]
     public float maxTiltAngle = 50f;
 
     [Header("Falling Items settings")]
-    public System.Collections.Generic.List<GameObject> itemBoxes;
+    public List<GameObject> itemBoxes = new List<GameObject>(3);
     public float fallForce = 5f;
 
     [Header("Collision settings")]
@@ -41,6 +45,7 @@ public class ItemPhysics : MonoBehaviour
     private Rigidbody carRigidbody;
     private bool itemsFallen = false;
 
+
     void Start()
     {
         carRigidbody = GetComponent<Rigidbody>();
@@ -53,7 +58,30 @@ public class ItemPhysics : MonoBehaviour
         {
             Debug.Log("rigidbody on the vehicle");
         }
+
+        itemStack = GameObject.Find("ItemStackPivot").transform;
+
+        boxParent = GameObject.FindWithTag("itemStack");
+        boxParent.transform.SetParent(GameObject.Find("ItemStackPivot").transform);
+        boxParent.transform.position = GameObject.Find("ItemStackPivot").transform.position + new Vector3(-1.491f + 1.4f, 1.521f, 0.377f - -1.351829f);
+        
+        // itemStack.rotation = GameObject.Find("ItemStackPivot").transform.rotation;
+
+        levelEnd = FindAnyObjectByType<LevelEnd>();
+        levelTimer = GameObject.FindWithTag("Timer").GetComponent<LevelTimer>();
+
+        GameObject[] tempBoxes = GameObject.FindGameObjectsWithTag("Boxes");
+        foreach (GameObject box in tempBoxes)
+        {
+            itemBoxes.Add(box);
+        }
+        print(itemBoxes.Count);
+        itemBoxes.Sort((a, b) => a.transform.GetSiblingIndex().CompareTo(b.transform.GetSiblingIndex()));
+
+
+        // print(itemBoxes);
     }
+    
 
     void FixedUpdate()
     {
@@ -129,7 +157,7 @@ public class ItemPhysics : MonoBehaviour
 
         if (stability <= 0f && !itemsFallen)
         {
-            MakeItemsFall();
+            DropOneItem();
         }
 
 
@@ -183,49 +211,67 @@ public class ItemPhysics : MonoBehaviour
     }
 
     //
-    // MakeItemsFall()
+    // DropOneItem()
     //
-    // This method handles when the stability value reaches 0 and the
-    // items haven't fallen, then it will apply a random force to
-    // all the items in the stack, to simulate the items flying out
-    // the stack due to reckless driving or collision
+    // When the stability value reaches 0 it will remove the
+    // last item from the list/stack and apply a random force 
+    // to that item to simulate it flying out the stack
     //
-    //
-    void MakeItemsFall()
+    void DropOneItem()
     {
+        //Debug.Log("MakeItemsFall called");
         itemsFallen = true;
+        //itemsFallen = true;
         // Debug.LogError("Falling items now");
+        if (itemBoxes.Count == 0) return;
 
         source.Play();
 
-        foreach (GameObject box in itemBoxes)
+        // remove the last item in the list/stack
+        int lastIndex = itemBoxes.Count - 1;
+        GameObject item = itemBoxes[lastIndex];
+        itemBoxes.RemoveAt(lastIndex);
+
+        // add a box collider and rigidbody
+        item.transform.SetParent(null);
+        item.AddComponent<BoxCollider>();
+        Rigidbody itemRB = item.AddComponent<Rigidbody>();
+
+        // set a random force value to have the item fly off
+        Vector3 randomForce = new Vector3(
+            Random.Range(-1, 1f),
+            Random.Range(0.5f, 1f),
+            Random.Range(-1f, 1f)
+        ) * fallForce;
+
+        // apply the force
+        itemRB.AddForce(randomForce, ForceMode.Impulse);
+        itemRB.AddTorque(Random.insideUnitSphere * fallForce, ForceMode.Impulse);
+
+        if (itemBoxes.Count == 0)
         {
-            if (box == null) continue;
-
-            box.transform.SetParent(null);
-
-            Rigidbody boxRB = box.AddComponent<Rigidbody>();
-
-            Vector3 randomForce = new Vector3(
-                Random.Range(-1, 1f),
-                Random.Range(0.5f, 1f),
-                Random.Range(-1f, 1f)
-            ) * fallForce;
-
-            boxRB.AddForce(randomForce, ForceMode.Impulse);
-
-            boxRB.AddTorque(Random.insideUnitSphere * fallForce, ForceMode.Impulse);
+            Invoke("TriggerLoseCargo", 2f);
+            return;
         }
 
-        Invoke("TriggerLoseCargo", 2f);
+        // reset stability after one item has fallen
+        stability = 100f;
+        itemsFallen = false;
     }
 
     // Called after a 2 second delay to show level end panel and to
     // stop timer.
     void TriggerLoseCargo()
     {
+        // Debug.Log("TriggerLoseCargo called");
+        // Debug.Log("levelEnd: " + levelEnd);
+        // Debug.Log("levelTimer: " + levelTimer);
         if (levelTimer != null) levelTimer.StopTimer();
-        if (levelEnd != null) levelEnd.LoseCargo();
+        if (levelEnd != null)
+        {
+            print("triggered levelEnd.LoseCargo()");
+            levelEnd.LoseCargo();
+        } 
     }
 
     //

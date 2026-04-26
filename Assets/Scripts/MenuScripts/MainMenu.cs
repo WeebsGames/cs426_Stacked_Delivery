@@ -73,6 +73,12 @@ public class MainMenu : MonoBehaviour
         cam.GetComponent<CameraFollow>().carTransform = garageCamPos;
     }
 
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Intro");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

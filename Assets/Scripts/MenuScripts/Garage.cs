@@ -56,9 +56,11 @@ public class Garage : MonoBehaviour
 
     void Start()
     {
-        if(PlayerPrefs.GetString("Car") == null)
+        print("start called");
+        if(PlayerPrefs.GetString("Car") == "")
         {
             PlayerPrefs.SetString("Car", "AE86");
+            print("set car to AE86");
         }
         updateCar();
     }

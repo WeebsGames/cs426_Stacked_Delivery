@@ -8,6 +8,7 @@ public class finishscirpt : MonoBehaviour
     public LevelTimer levelTimer;
     public LevelEnd levelEnd;
     public ItemPhysics itemPhysics;
+    public ScoreManager scoreManager;
 
     void Start()
     {
@@ -42,6 +43,11 @@ public class finishscirpt : MonoBehaviour
                 }
                 else
                 {
+                    // add points to time and cargo
+                    // time bonus points for time remaining on timer
+                    // item points bonus for number of items * 100
+                    scoreManager.timeBonus = Mathf.FloorToInt(levelTimer.GetTimeRemaining());
+                    scoreManager.cargoBonus = itemPhysics.itemBoxes.Count * 100f;
                     levelEnd.Win();
                 }
             }

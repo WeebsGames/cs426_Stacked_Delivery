@@ -179,10 +179,10 @@ public class CarControl : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // print("prevSpeed "+prevSpeed);
+        print("prevSpeed "+prevSpeed);
         if(prevSpeed > crashThreshold && rigidBody.linearVelocity.magnitude < 0.7 * prevSpeed)
         {
-            // print("crashed");
+            print("crashed");
             crashSource.time = 1.8f;
             crashSource.Play();
         }

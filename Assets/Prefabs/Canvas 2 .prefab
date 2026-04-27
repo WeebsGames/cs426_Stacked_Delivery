@@ -911,7 +911,7 @@ MonoBehaviour:
   others:
   - {fileID: 3657105201931637316}
   pause: {fileID: 5913600268546547458}
-  levelTimer: {fileID: 0}
+  levelTimer: {fileID: 6024858010206668274}
 --- !u!1 &1816814140139001691
 GameObject:
   m_ObjectHideFlags: 0

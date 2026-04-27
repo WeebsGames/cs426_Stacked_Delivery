@@ -29,7 +29,7 @@ public class SimplePause : MonoBehaviour
             PauseToggle();
             // print("paused: " + paused);
         }
-        if (Input.GetKeyDown(KeyCode.Delete))
+        if (Input.GetKeyDown(KeyCode.Delete) || Input.GetKeyDown(KeyCode.R))
         {
             Restart();
         }

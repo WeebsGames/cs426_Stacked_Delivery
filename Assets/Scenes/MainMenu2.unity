@@ -23876,10 +23876,8 @@ MonoBehaviour:
 
     Drifting - Space Bar
 
-    Last Checkpoint
-    - R
-
-    Restart Level - Delete
+    Restart Level
+    - Delete/R
 
     Pause/Back - ESC'
   m_isRightToLeft: 0

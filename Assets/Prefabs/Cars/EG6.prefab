@@ -1256,7 +1256,7 @@ MonoBehaviour:
   steeringRangeAtMaxSpeed: 40
   centreOfGravityOffset: -1
   crashThreshold: 10
-  crashSource: {fileID: 9028971401821022053, guid: 7befe755d8bad9549be5b45833b9b7b6, type: 3}
+  crashSource: {fileID: 8671174364802801151}
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   brakeText: {fileID: 0}
   startPos: {fileID: 0}
